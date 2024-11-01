@@ -3,10 +3,12 @@
 
 # Design philosophy
 ## Color template in (hex)
-+ dark_blue `#192039`
++ dark_blue_bg `#192039` as background color
++ Magenta_active `#700639` current active color
++ whitesmoke_font as font color
 
-## Website's prototype link
+## [Prototype link]([https://pages.github.com/](https://sites.google.com/view/4wheelsauction/home))
 https://sites.google.com/view/4wheelsauction/home
 
-## Website Link hosted via Github
+## [GitHub site link](https://pages.github.com/)
 https://m-ali-squ.github.io/4wheelsauction.github.io/src/index.html
