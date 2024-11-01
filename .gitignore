@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+public/assets/
+public/css/
+public/js/
+*.min.js
+*.min.css
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+*.bak
+
+# Composer dependencies (if using PHP)
+vendor/
+
+# Miscellaneous
+*.tmp
+*.temp
+*.cache
+*.swp
+*.swo
+*.lock
+
+# Other files to ignore
+*.pdf
+*.docx
+*.xlsx
