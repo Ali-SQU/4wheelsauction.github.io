@@ -10,5 +10,5 @@
 ## [Prototype link]([https://pages.github.com/](https://sites.google.com/view/4wheelsauction/home))
 https://sites.google.com/view/4wheelsauction/home
 
-## [GitHub site link](https://pages.github.com/)
+## [GitHub site link]([https://pages.github.com/](https://m-ali-squ.github.io/4wheelsauction.github.io/src/index.html))
 https://m-ali-squ.github.io/4wheelsauction.github.io/src/index.html
