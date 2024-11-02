@@ -24,3 +24,34 @@
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 } */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer style */
+.footer-links {
+  text-decoration: none;
+}
+
+.footer-links:hover {
+  text-decoration: underline;
+}
+
+.Social-icons {
+  font-size: 1.3em;
+}
+
+.Social-icons:hover {
+  color: #9598a6;
+}
