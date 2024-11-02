@@ -1,0 +1,11 @@
+/* All predefined color, font and style variables are declared here */
+:root{
+  --dark-blue-bg: #192039; 
+  --magenta-font-color: #700639;
+}
+
+/* custom the color later */
+#nav_custom{
+  padding: 0%;
+
+}
