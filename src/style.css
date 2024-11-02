@@ -4,6 +4,18 @@
   --magenta-font-color: #700639;
 }
 
+/* This part of code ensures that footers is position at buttom (body and main) */
+/* Using flex display property */
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex-grow: 1;
+}
+
 /* custom the color later */
 #nav_custom{
   padding: 0%;
@@ -14,15 +26,6 @@
   background-color: var(--dark-blue-bg);
 }
 
-/* .reg-btn-spacing{
-  margin-left: 10;
-  margin-right: 10!important;
-} */
-
-/* .bg-dark {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
-} */
 
 
 
