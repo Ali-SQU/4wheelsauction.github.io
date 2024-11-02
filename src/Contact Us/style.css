@@ -117,3 +117,23 @@ body {
 .contact-sidebar a:hover {
     text-decoration: underline;
 }
+
+
+
+
+/* Footer style */
+.footer-links {
+    text-decoration: none;
+  }
+  
+  .footer-links:hover {
+    text-decoration: underline;
+  }
+  
+  .Social-icons {
+    font-size: 1.3em;
+  }
+  
+  .Social-icons:hover {
+    color: #9598a6;
+  }
