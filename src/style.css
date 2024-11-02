@@ -9,3 +9,18 @@
   padding: 0%;
 
 }
+
+.bg-dark-custom{
+  background-color: var(--dark-blue-bg);
+}
+
+/* .reg-btn-spacing{
+  margin-left: 10;
+  margin-right: 10!important;
+} */
+
+/* .bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+} */
+
