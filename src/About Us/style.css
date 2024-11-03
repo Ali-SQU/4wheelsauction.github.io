@@ -1,2 +1,46 @@
+body {
+    background-color: #192039;
+}
+.main{
+    background-color: #fbfcff;
+    color: #2191e1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 34px;
+    text-align: center;
+    padding: 28px;
+    
+}
+blockquote{
+    background-color: #fbfcff;
+    color:rgb(53, 37, 13);
+    font-size: 30px;
+    text-align: center;
+    padding: 30px;
+}
+.FAQ {
+    background-color: #fbfcff;
+    color:rgb(53, 37, 13);
+    font-size: 30px;
+    text-align: left;
+    padding: 30px;
+}
+.glow-button {
+    display: inline-block; 
+    background-color: #5e97d1; 
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #041bf1;
+}
+
+
+.glow-button:hover {
+    box-shadow: 0 0 25px #5c08c4, 0 0 30px #3204ec, 0 0 40px #42077d;
+}
 
 
