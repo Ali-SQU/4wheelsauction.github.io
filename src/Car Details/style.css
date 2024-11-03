@@ -1,0 +1,44 @@
+/* All predefined color, font and style variables are declared here */
+:root{
+  --dark-blue-bg: #192039; 
+  --magenta-font-color: #700639;
+}
+
+/* This part of code ensures that footers is position at buttom (body and main) */
+/* Using flex display property */
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex-grow: 1;
+}
+
+/* custom the color later */
+#nav_custom{
+  padding: 0%;
+
+}
+
+.bg-dark-custom{
+  background-color: var(--dark-blue-bg);
+}
+
+/* Footer style */
+.footer-links {
+    text-decoration: none;
+  }
+  
+  .footer-links:hover {
+    text-decoration: underline;
+  }
+  
+  .Social-icons {
+    font-size: 1.3em;
+  }
+  
+  .Social-icons:hover {
+    color: #9598a6;
+  }
