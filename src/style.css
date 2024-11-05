@@ -26,6 +26,42 @@ main{
   background-color: var(--dark-blue-bg);
 }
 
+
+
+/* Hero section styling */
+.hero-section {
+  background-image: url("./Home Images/bg.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Category and featured card styling */
+.card {
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Button customization */
+.btn-outline-primary, .btn-primary {
+  border-color: #700639;
+  color: #700639;
+}
+
+.btn-outline-primary:hover, .btn-primary:hover {
+  background-color: #700639;
+  color: white;
+}
+
+
+
+
+
+
 /* Footer style */
 .footer-links {
   text-decoration: none;
