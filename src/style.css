@@ -57,7 +57,11 @@ main{
   color: white;
 }
 
-
+#Explore_all:hover {
+  background-color: #28a745; /* Darker green */
+  border-color: #218838; /* Even darker green */
+  color: #fff; /* Ensure text remains white */
+}
 
 
 
