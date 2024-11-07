@@ -1,28 +1,36 @@
 /* All predefined color, font and style variables are declared here */
-:root{
-  --dark-blue-bg: #192039; 
+:root {
+  --dark-blue-bg: #192039;
   --magenta-font-color: #700639;
 }
 
 /* This part of code ensures that footers is position at buttom (body and main) */
 /* Using flex display property */
-body{
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-main{
+body {
+  background-image: url("./Home Images/bg2.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
   flex-grow: 1;
 }
 
 /* custom the color later */
-#nav_custom{
+#nav_custom {
   padding: 0%;
 
 }
 
-.bg-dark-custom{
+.bg-dark-custom {
   background-color: var(--dark-blue-bg);
 }
 
@@ -47,20 +55,22 @@ main{
 }
 
 /* Button customization */
-.btn-outline-primary, .btn-primary {
+.btn-outline-primary,
+.btn-primary {
   border-color: #700639;
   color: #700639;
 }
 
-.btn-outline-primary:hover, .btn-primary:hover {
+.btn-outline-primary:hover,
+.btn-primary:hover {
   background-color: #700639;
   color: white;
 }
 
 #Explore_all:hover {
-  background-color: #28a745; /* Darker green */
-  border-color: #218838; /* Even darker green */
-  color: #fff; /* Ensure text remains white */
+  background-color: #28a745;
+  border-color: #218838;
+  color: #fff;
 }
 
 
