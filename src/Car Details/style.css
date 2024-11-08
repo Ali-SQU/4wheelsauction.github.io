@@ -29,16 +29,38 @@ main{
 /* Footer style */
 .footer-links {
     text-decoration: none;
-  }
+}
   
-  .footer-links:hover {
-    text-decoration: underline;
-  }
-  
-  .Social-icons {
-    font-size: 1.3em;
-  }
-  
-  .Social-icons:hover {
-    color: #9598a6;
-  }
+.footer-links:hover {
+  text-decoration: underline;
+}
+
+.Social-icons {
+  font-size: 1.3em;
+}
+
+.Social-icons:hover {
+  color: #9598a6;
+}
+
+
+#detail-title{
+  text-align: left; 
+  font-size: 1.0em;
+
+}
+
+#detail-data{
+  text-align: right;
+  font-size: 1.0em;
+}
+
+
+div #header-title-detail{
+  text-decoration: underline;
+  text-align: left;
+}
+
+#center-div{
+  text-align: center;
+}
