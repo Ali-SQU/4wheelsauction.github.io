@@ -1,4 +1,150 @@
-body{
-  background-color: black;
+/* Background color for the body */
+body {
+  background-image: url("backgrobd2.webp"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+/* Styling the signup form container */
+.signup-form {
+  background-image: url(backgrobd2.webp); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Header style for signup form */
+.signup-header {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Styling the text fields */
+.signup-form .form-control {
+  border-radius: 4px;
+}
+
+/* Styling the terms link */
+.signup-form .form-check-label a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-form .form-check-label a:hover {
+  text-decoration: underline;
+}
+
+/* Button styling */
+.signup-form .btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.signup-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Footer text */
+.signup-form p {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.signup-form p a {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.signup-form p a:hover {
+  text-decoration: underline;
+}
+
+/* Membership Option Styling */
+/* Make the membership cards appear in a horizontal layout */
+.form-row {
+  display: flex;
+  gap: 1rem; /* Adds spacing between cards */
+}
+
+.membership-option {
+  flex: 1; /* Ensures each option takes equal width */
+}
+
+.membership-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Individual Membership Colors */
+.basic {
+  background-color: white;
+  color: #fff;
+}
+
+.premium {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.business {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.vip {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Hover and Selection Effects */
+.membership-card:hover {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.membership-option input[type="radio"]:checked + .membership-card {
+  border-color: #007bff;
+  box-shadow: 0px 4px 8px rgba(155, 194, 236, 0.308);
+}
+
+/* Individual Membership Colors */
+.basic {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.premium {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.business {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.vip {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Hover and Selection Effects */
+.membership-card:hover {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.membership-option input[type="radio"]:checked + .membership-card {
+  border-color: #007bff;
+  box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.2);
+}

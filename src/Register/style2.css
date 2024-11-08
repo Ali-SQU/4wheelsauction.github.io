@@ -1,0 +1,93 @@
+/* Background overlay for better focus on form */
+.background-overlay {
+    background-image: url('backgrobd2.webp');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px) brightness(0.7); /* Adds a blur and darken effect */
+  }
+  
+  /* Centering the form vertically and horizontally */
+  .container {
+    z-index: 10; /* Ensures form is above overlay */
+  }
+  
+  /* Enlarged styling for the login form container */
+  .login-form {
+    max-width: 600px; /* Wider form container */
+    width: 100%;
+    border-radius: 12px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent */
+  }
+  
+  /* Icon for login header */
+  .login-icon {
+    font-size: 4rem; /* Larger icon */
+    color: #007bff;
+  }
+  
+  .login-header {
+    font-weight: bold;
+    color: #343a40;
+    font-size: 2rem; /* Increased font size */
+  }
+  
+  /* Welcome back message styling */
+  .login-form p {
+    font-size: 1.1rem; /* Larger welcome message */
+    color: #6c757d;
+  }
+  
+  /* Styling the text fields */
+  .login-form .form-control {
+    border-radius: 6px;
+    padding: 12px; /* More padding for larger appearance */
+    font-size: 1.1rem;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling the Remember Me and Forgot Password link */
+  .forgot-password {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Button styling */
+  .login-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 15px; /* Larger button */
+    font-size: 1.2rem; /* Larger font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  
+  .login-form .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Small lift effect on hover */
+  }
+  
+  /* Sign Up link styling */
+  .signup-link {
+    color: #007bff;
+    font-weight: 600;
+    font-size: 1rem; /* Larger font size */
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  
