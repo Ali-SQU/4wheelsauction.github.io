@@ -30,16 +30,29 @@ main{
 /* Footer style */
 .footer-links {
     text-decoration: none;
-  }
-  
-  .footer-links:hover {
-    text-decoration: underline;
-  }
-  
-  .Social-icons {
-    font-size: 1.3em;
-  }
-  
-  .Social-icons:hover {
-    color: #9598a6;
-  }
+}
+
+.footer-links:hover {
+  text-decoration: underline;
+}
+
+.Social-icons {
+  font-size: 1.3em;
+}
+
+.Social-icons:hover {
+  color: #9598a6;
+}
+
+#bidding-hint{
+  font-size: smaller;
+  font-weight: 400;
+}
+
+#auction-date-text{
+  font-weight: bold;
+}
+
+#card-auction:hover{
+  background-color: #9598a6;
+}

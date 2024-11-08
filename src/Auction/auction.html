@@ -16,8 +16,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <title>Auction</title>
+  <style>
+    .table-spacing{
+      padding-top: 2.5em;
+    }
+
+    #header-style-table{
+      background-color: #192039;
+      color: whitesmoke;
+    }
+
+  </style>
+
 </head>
 
 <body>
@@ -46,7 +57,193 @@
     </nav>
   </div>
 
-  <main></main>
+  <main>
+    <div class="container table-spacing">
+      <table class="table">
+        <thead class="thead-dark test">
+          <tr>
+            <th id="header-style-table"  scope="col">image</th>
+            <th id="header-style-table"  scope="col">Lot Info</th>
+            <th id="header-style-table"  scope="col">Vehicle Info</th>
+            <th id="header-style-table"  scope="col">Sale Info</th>
+            <th id="header-style-table"  scope="col">Condition</th>
+            <th id="header-style-table"  scope="col">Bid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </main>
 
   <!-- Footer Start -->
   <footer class="text-light footer_box" style="background-color: #192039;">
