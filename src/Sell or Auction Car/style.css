@@ -53,20 +53,7 @@ div.sell3{
 p.size{
   font-size: 150%;
 }
-.logButton {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #007BFF; 
-  text-align: center;
-  width: 400px;
-  text-decoration: none;
-  border-radius: 50px; 
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Soft shadow */
-  transition: all 0.3s ease;
-}
+
 .logButton2 {
   display: inline-block;
   padding: 10px 20px;
@@ -105,18 +92,7 @@ h3.text4{
   
 }
 
-.logButton:hover {
-  background-color: #0056b3; 
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5); 
-  
-}
 
-.logButton:active {
-  transform: translateY(2px); 
-  box-shadow: none; 
-  
-}
 div.div2{
   background-color: #007bff;
   text-align: center;
@@ -175,18 +151,12 @@ h6.auction{
   background-repeat: no-repeat;
   background-position: bottom;
   color: #181414;
-  padding: 50px;
+  padding: 150px;
   text-align: center;
   border-radius: 8px;
 }
-#logo {
-float: left;
-}
-div.field {
-  border: none;
-  padding: 0;
-  margin: 10px 0;
-}
+
+
 
 
 .radio-label {
@@ -220,28 +190,13 @@ div.field {
 }
 
 
-.logButton {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  background-color: #3f546b;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s;
-}
 h3.bold{
   font-weight: bold;
 }
 .logButton2:hover {
   background-color: #0056b3;
 }
-.logButton:hover {
-  background-color: #0056b3;
-}
+
 
 h3.text2{
   color: #ece9e5;
