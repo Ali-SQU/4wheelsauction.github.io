@@ -1,3 +1,41 @@
+/* All predefined color, font and style variables are declared here */
+:root {
+  --dark-blue-bg: #192039;
+  --magenta-font-color: #700639;
+}
+
+/* This part of code ensures that footers is position at buttom (body and main) */
+/* Using flex display property */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-image: url("./Home Images/bg2.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* custom the color later */
+#nav_custom {
+  padding: 0%;
+
+}
+
+.bg-dark-custom {
+  background-color: var(--dark-blue-bg);
+}
+
+
+
 /* Background overlay for better focus on form */
 .background-overlay {
     background-image: url('backgrobd2.webp');

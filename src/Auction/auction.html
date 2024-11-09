@@ -16,8 +16,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <title>Auction</title>
+  <style>
+    .table-spacing{
+      padding-top: 2.5em;
+    }
+
+    #header-style-table{
+      background-color: #192039;
+      color: whitesmoke;
+      text-align: center;
+    }
+
+  </style>
+
 </head>
 
 <body>
@@ -33,20 +45,203 @@
           <li class="nav-item"><a class="nav-link active" href="#">Auction</a></li>
           <li class="nav-item"><a class="nav-link" href="..\Car Details\car_details.html">Car Detail</a></li>
           <li class="nav-item"><a class="nav-link" href="..\Sell or Auction Car\sell_auction.html">Sell/Auction Your Car</a></li>
-          <li class="nav-item"><a class="nav-link" href="..\Auction Dashboard\dashboard.html">Auction Dashboard</a></li>
         </ul>
         <!-- Navigation Layout justify to the right -->
         <ul class="navbar-nav">
-          <li class="nav-item"><button type="button" class="btn btn-outline-light me-2"
-              style="margin-left: 10px;">Login</button></li>
-          <li class="nav-item"><button type="button" class="btn btn-light" style="margin-left: 10px;">Sign-up</button>
-          </li>
+          <a href="../Register/login.html"><li class="nav-item"><button type="button" class="btn btn-outline-light me-2" style="margin-left: 10px;">Login</button></li></a>
+          <a href="../Register/sign_up.html"><li class="nav-item"><button type="button" class="btn btn-light" style="margin-left: 10px;">Sign-up</button></li></a>
         </ul>
       </div>
     </nav>
   </div>
 
-  <main></main>
+  <main>
+    <div class="container table-spacing">
+      <table class="table">
+        <thead class="thead-dark test">
+          <tr>
+            <th id="header-style-table"  scope="col">image</th>
+            <th id="header-style-table"  scope="col">Lot Info</th>
+            <th id="header-style-table"  scope="col">Vehicle Info</th>
+            <th id="header-style-table"  scope="col">Sale Info</th>
+            <th id="header-style-table"  scope="col">Condition</th>
+            <th id="header-style-table"  scope="col">Bid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
+            <td>2020 CHEVROLET TAHOE C1500 LS</td>
+            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
+            <td>
+              Halban, OM<br/>
+              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
+            </td>
+            <td>
+              Normal wear<br/>
+              Damage<br/>
+              key Available
+            </td>
+            <td>
+              Current Bid:<br/>
+              200 OMR<br/>
+              <div style="margin-top: 1em;">
+                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
+                <span id="bidding-hint">Bid according to increment rule</span><br/>
+                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
+                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
+              </div>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </main>
 
   <!-- Footer Start -->
   <footer class="text-light footer_box" style="background-color: #192039;">
@@ -56,7 +251,7 @@
         <div class="col-sm-6 col-md-3 mb-3">
           <h5>Get to Know Us</h5>
           <ul class="list-unstyled">
-            <li><a href="..\About Us\about.html" style="color:#9598a6" class="footer-links">About 4 Wheels</a></li>
+            <li><a href="..\About Us\about.html" style="color:#9598a6" class="footer-links">About 4 Wheels Auction</a></li>
             <li><a href="#" style="color:#9598a6" class="footer-links">Our Mission</a></li>
             <li><a href="#" style="color:#9598a6" class="footer-links">The Team</a></li>
           </ul>
@@ -68,7 +263,6 @@
           <ul class="list-unstyled">
             <li><a href="#" style="color:#9598a6" class="footer-links">Search Vehicles</a></li>
             <li><a href="#" style="color:#9598a6" class="footer-links">Car Listings</a></li>
-            <li><a href="#" style="color:#9598a6" class="footer-links">Auction Dashboard</a></li>
           </ul>
         </div>
 
@@ -78,7 +272,6 @@
           <ul class="list-unstyled">
             <li><a href="#" style="color:#9598a6" class="footer-links">Sell/Auction</a></li>
             <li><a href="#" style="color:#9598a6" class="footer-links">Shipping Options</a></li>
-            <li><a href="#" style="color:#9598a6" class="footer-links">Live Auction</a></li>
           </ul>
         </div>
 
@@ -98,12 +291,7 @@
       <!-- Social Media & Copyright -->
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div class="text-center text-md-start mb-3 mb-md-0">
-          <p class="mb-0">©2024 4 Wheels. All Rights Reserved</p>
-          <p class="mb-0">
-            <a href="#" style="color:#9598a6" class="footer-links">Terms & Conditions</a> <span
-              style="color:#9598a6">|</span>
-            <a href="#" style="color:  #9598a6" class="footer-links">Privacy Policy</a>
-          </p>
+          <p class="mb-0">©2024 4 Wheels Auction. All Rights Reserved</p>
         </div>
 
         <div class="text-center">
