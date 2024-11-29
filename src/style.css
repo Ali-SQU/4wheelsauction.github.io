@@ -73,7 +73,7 @@ main {
   color: #fff;
 }
 
-
+/* style up arrow icon */
 #scrollUpBtn {
   position: fixed;
   bottom: 20px;
@@ -87,7 +87,19 @@ main {
   display: none; 
 }
 
+/* style text-banner */
+.text-banner {
+  font-size: 23px;
+  background: #192039; /* Dark blue-gray background */
+  padding: 10px;
+  color: white; /* White text color */
+  border-top: 2px solid #444; /* Slightly darker border for subtle design */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a soft shadow for a premium feel */
+}
 
+marquee {
+  font-family: 'Times New Roman', Times, serif;
+}
 
 
 /* Footer style */
