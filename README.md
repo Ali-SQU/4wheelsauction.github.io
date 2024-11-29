@@ -7,5 +7,5 @@ https://sites.google.com/view/4wheelsauction/home
 ## [GitHub site link]([https://pages.github.com/](https://m-ali-squ.github.io/4wheelsauction.github.io/src/index.html))
 https://m-ali-squ.github.io/4wheelsauction.github.io/src/index.html
 
-## [Fun page site link](https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpagehtml)
+## [Fun page site link]([https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpagehtml](https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpage.html))
 https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpage.html
