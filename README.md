@@ -12,17 +12,17 @@ https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpage.html
 
 # To access fun page click on the website's logo in the top section of the page **Home page page**.
 ![Accessing fun page](https://github.com/user-attachments/assets/fbf965cb-0988-4522-a3cd-11dab365d0e3)
-Figure 1: screenshot A way to access fun page in home page
 
 # CONTROLS
 1. `A` to straft left and `D` to straft right.
 2. `<-` to straft left and `->` to straft right.
 3. Press `R` to Replay when game over.
+4. 4. `Hold` the car to straft `left` or `right`.
 
 # Additional Note
-- In case of blank canvas, please reset your browswer's cache or open in incognito mode.
+- In case of blank canvas, please reset your browser's cache or open in incognito mode.
 - Zoom is disabled.
-- For better experience make sure your running at default browswer's setting.
+- For better experience make sure your running at default browser's setting.
 - Optimized for Desktop and Laptop only!
 
 # Have Fun 💖!
