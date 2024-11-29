@@ -10,7 +10,9 @@ https://m-ali-squ.github.io/4wheelsauction.github.io/src/index.html
 ## [Fun page site link]([https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpagehtml](https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpage.html))
 https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpage.html
 
-# To access fun page click on the website's logo in the top section of the page.
+# To access fun page click on the website's logo in the top section of the page **Home page page**.
+![Accessing fun page](https://github.com/user-attachments/assets/fbf965cb-0988-4522-a3cd-11dab365d0e3)
+Figure 1: screenshot A way to access fun page in home page
 
 # CONTROLS
 1. `A` to straft left and `D` to straft right.
@@ -23,4 +25,6 @@ https://m-ali-squ.github.io/4wheelsauction.github.io/src/Fun%20Page/funpage.html
 - For better experience make sure your running at default browswer's setting.
 - Optimized for Desktop and Laptop only!
 
-# Have Fun 🐓!
+# Have Fun 💖!
+![DanceMaracasGIF](https://github.com/user-attachments/assets/6dbe2dc6-e546-431f-b04c-8f57de2f7e0a)
+
