@@ -156,31 +156,6 @@ function input(){
           car_position.x -= car_speed;
         }
         break;
-      
-      //! later addition freedom of x and y axis movement
-      // case "w":
-      //   if(car_position.y > 10){
-      //     car_position.y -= car_speed;
-      //   }
-      //   break;
-      
-      // case "arrowup":
-      //   if (car_position.y > 10){
-      //     car_position.y -= car_speed;
-      //   }
-      //   break;
-
-      // case "s":
-      //   if (car_position.y <= 750){
-      //     car_position.y += car_speed;
-      //   }
-      //   break;
-
-      // case "arrowdown":
-      //   if (car_position.y <= 750){
-      //     car_position.y += car_speed;
-      //   }
-      //   break;
     }
     
   });
@@ -318,10 +293,7 @@ function gameLoop(){
   obsticle_manager(Max_obsticle); 
 
   /* Checks if player collide with obsticle */
-  // detectCollision();
-  
-  //!debug
-  console.log(car_position.x);
+  detectCollision();
 
   /* Recursive main loop */
   window.requestAnimationFrame(gameLoop);
