@@ -1,0 +1,13 @@
+body{
+  background-color: #212529;
+}
+
+/* Centering the canvas */
+#canvas-postion{
+  display: flex;
+  justify-content: center;
+}
+
+#obstacle_game_canvas{
+  box-shadow: 1px 1px 20px rgba(245, 245, 245, 0.075);
+}

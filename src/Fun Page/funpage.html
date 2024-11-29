@@ -2,13 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=no">
   <title>Fun Page</title>
   <!-- link stylesheet -->
   <link href="style.css" rel="stylesheet"/>
-  <script src="fun_page.js"></script>
+  <script defer src="car_obstacle_avoid_mini_game.js" type="text/javascript"></script>
 </head>
 <body>
-  <h1>Fun Page work on Progress!</h1>
+  <!-- Game asset that will be used for canvas -->
+   <div style="display: none;">
+    <img id="Road_background" src="Assets/Road_background.png"/>
+    <img id="Road1" src="Assets/Road1.png">
+   </div>
+
+  <div id="canvas-postion">
+    <canvas height="850px" width="750px" id="obstacle_game_canvas">
+      <!-- Display the message if user's browswer doesn't support canvas tag -->
+      Sorry, Your browswer doesn't support canvas.
+      Recommend browswer: Chrome, Chromium based browser, firefox and etc
+    </canvas>
+     
+  </div>
 </body>
 </html>
+
