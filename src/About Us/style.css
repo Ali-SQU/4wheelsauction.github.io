@@ -41,7 +41,18 @@ body {
 
 
 
-
+#scrollUpBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 1px;
+  font-size: 35px;
+  background: transparent;
+  color: #d8d8d8;
+  border: none;
+  cursor: pointer;
+  display: none; 
+}
 
 /* Footer style */
 .footer-links {
