@@ -74,6 +74,20 @@ main {
 }
 
 
+#scrollUpBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 1px;
+  font-size: 35px;
+  background: transparent;
+  color: #7c7c7c;
+  border: none;
+  cursor: pointer;
+  display: none; 
+}
+
+
 
 
 /* Footer style */
