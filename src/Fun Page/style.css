@@ -1,13 +1,69 @@
 body{
   background-color: #212529;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 /* Centering the canvas */
 #canvas-postion{
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
 #obstacle_game_canvas{
+  margin-right: 22%;
+  /* margin-top: 2%; */
   box-shadow: 1px 1px 20px rgba(245, 245, 245, 0.075);
+  border-radius: 3%;
+}
+
+#control-hints{
+  margin-top: 0%;
+  margin: 10%;
+  width: 20%;
+  display: block;
+}
+
+#hint-button{
+  margin-top: 3%;
+  display: inline-block;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight:bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 19%;
+  border: 1.5px solid whitesmoke;
+}
+
+#hint-message{
+  display: inline-block;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin-left: 0.5em;
+}
+
+#return-button{
+  width: 170px;
+  background-color: whitesmoke;
+  color: black;
+  font-family: Arial;
+  font-size: 1.0em;
+  font-weight: bold;
+  height: 50px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid whitesmoke;
+  text-decoration: none;
+}
+
+#return-button:hover{
+  background-color: #05ab6e;
+  color: whitesmoke;
+  border-color: #05ab6e;
 }

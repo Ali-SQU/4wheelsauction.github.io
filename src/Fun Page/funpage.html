@@ -15,13 +15,37 @@
     <img id="Road1" src="Assets/Road1.png">
    </div>
 
+   <div>
+    <button id="return-button" type="button" onclick="window.location.href='..\\index.html';">Return to Home page</button> 
+   </div>
+
   <div id="canvas-postion">
+        
+    <div id="control-hints">
+      <div id="hint-button">A</div>
+      <div id="hint-message">To straft Left</div>
+      <br/>
+      <div id="hint-button">D</div>
+      <div id="hint-message">To straft Right</div>
+      <br/><br/>
+      <div id="hint-button">&larr;</div>
+      <div id="hint-message">To straft Right</div>
+      <br/>
+      <div id="hint-button">&rarr;</div>
+      <div id="hint-message">To straft Right</div>
+      <br/><br/>
+      <div id="hint-button">&#x25CB;</div>
+      <div id="hint-message">Hold and drag the cursor to move</div>
+      <br/><br/><br/>
+      
+   </div>
+
     <canvas height="850px" width="750px" id="obstacle_game_canvas">
       <!-- Display the message if user's browswer doesn't support canvas tag -->
       Sorry, Your browswer doesn't support canvas.
       Recommend browswer: Chrome, Chromium based browser, firefox and etc
     </canvas>
-     
+    
   </div>
 </body>
 </html>
