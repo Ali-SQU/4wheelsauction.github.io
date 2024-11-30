@@ -44,25 +44,8 @@ document.getElementById("questionnaireForm").addEventListener("submit", function
         isValid = false;
     }
 
-    // Rating validation - must choose one option
-    const rating = document.querySelector("input[name='rating']:checked");
-    if (!rating) {
-        document.querySelector("input[name='rating']").setCustomValidity("Please select a rating for our service.");
-        document.querySelector("input[name='rating']").reportValidity();
-        isValid = false;
-    } else {
-        document.querySelector("input[name='rating']").setCustomValidity("");
-    }
 
-    // Recommendation validation - must choose one option
-    const recommend = document.querySelector("input[name='recommend']:checked");
-    if (!recommend) {
-        document.querySelector("input[name='recommend']").setCustomValidity("Please indicate if you would recommend us to others.");
-        document.querySelector("input[name='recommend']").reportValidity();
-        isValid = false;
-    } else {
-        document.querySelector("input[name='recommend']").setCustomValidity("");
-    }
+
 
     // If all validations pass, submit the form
     if (isValid) {
