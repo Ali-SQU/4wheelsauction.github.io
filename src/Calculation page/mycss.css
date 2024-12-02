@@ -11,6 +11,9 @@ body::before {
     opacity: 0.5; 
     z-index: -1; 
 }
+#mid{
+    text-align: center;
+}
 h1 {
     text-transform: uppercase;
     background: linear-gradient(to right, #4ad5dc 0%, #833f22 100%);
