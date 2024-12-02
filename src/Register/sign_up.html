@@ -16,7 +16,7 @@
         <div class="signup-form shadow-lg p-5 mt-5 bg-white rounded">
             <h2 class="signup-header text-center mb-4">Create Your Account</h2>
             <p class="text-center text-muted">Join us to access exclusive content and features.</p>
-            <form action="/submit-signup" method="POST">
+            <form id="sign" action="/submit-signup" method="POST">
                 <!-- Full Name Field -->
                 <div class="form-group mb-3">
                     <label for="name">Full Name</label>
@@ -75,7 +75,7 @@
                 <h5 class="mt-4 mb-3">Choose Membership Type</h5>
                 <div class="form-row d-flex justify-content-between">
                     <!-- Membership Cards -->
-                    <label class="membership-option col-md-3">
+                    <label   class="membership-option col-md-3">
                         <input type="radio" name="membership" value="basic" required>
                         <div class="membership-card basic text-center p-3">
                             <h6 class="card-title">Basic</h6>
@@ -83,7 +83,7 @@
                             <p class="small">Standard access to content.</p>
                         </div>
                     </label>
-                    <label class="membership-option col-md-3">
+                    <label  class="membership-option col-md-3">
                         <input type="radio" name="membership" value="premium" required>
                         <div class="membership-card premium text-center p-3">
                             <h6 class="card-title">Premium</h6>
@@ -91,7 +91,7 @@
                             <p class="small">Access to premium content.</p>
                         </div>
                     </label>
-                    <label class="membership-option col-md-3">
+                    <label  class="membership-option col-md-3">
                         <input type="radio" name="membership" value="business" required>
                         <div class="membership-card business text-center p-3">
                             <h6 class="card-title">Business</h6>
@@ -100,7 +100,7 @@
                             <h6 id="dis">15% Discount!</h6>
                         </div>
                     </label>
-                    <label class="membership-option col-md-3">
+                    <label   class="membership-option col-md-3">
                         <input type="radio" name="membership" value="vip" required>
                         <div class="membership-card vip text-center p-3">
                             <h6 class="card-title">VIP</h6>
@@ -118,7 +118,7 @@
                             conditions</a></label>
                 </div>
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary btn-block w-100">Create Account</button>
+                <button type="button" onclick="check()" class="btn btn-primary btn-block w-100">Create Account</button>
                 <button type="reset" class="btn btn-primary btn-block w-100" style="margin-top: 5px;">Reset</button>
                 <!-- Login Link -->
                 <p class="text-center mt-3 text-dark">Already have an account? <a href="login.html">Log in</a></p>
@@ -127,7 +127,10 @@
 
         </div>
     </div>
-
+<script type="text/javascript" src="script2.js">
+      
+</script>
+        
 </body>
 
 </html>
