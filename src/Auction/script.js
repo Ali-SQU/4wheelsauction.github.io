@@ -110,7 +110,7 @@ form.addEventListener("submit", (event) =>{ // handle submit button
     }
   }
   
-  // hide all the page that does include
+  // hide all the page that does include keyword
   for (let i = 0; i < 10; i++){
     let row_id = "dynamic_auction_row_" + (i + 1);
     let row_element = document.getElementById(row_id);
