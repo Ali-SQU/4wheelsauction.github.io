@@ -41,7 +41,7 @@ function submition(event) {
     // after the user click next , a message will appeaar to ask the user if he sure about the choices
     var confirmation = confirm("Are you sure you want to complete your purchase?");
     if (confirmation) {
-        alert("Congratulations... you can now start bidding!");
+        alert("Congratulations... you now have an activated account with us!");
         document.getElementById("multiForms").submit(); // Submit the form after the user confirm his choise
     }
 }
