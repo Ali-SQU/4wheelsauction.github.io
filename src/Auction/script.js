@@ -15,14 +15,12 @@ scrollUpBtn.onclick = function () {
 
 // objects for auction 
 // Dynamically update the site using React js
-function Car(img_src, lot_info, vehicle_info, sale_info, condition, time_left, bid){
+function Car(img_src, lot_info, vehicle_info, sale_info, condition){
     this.img_src = img_src;
     this.lot_info = lot_info;
     this.vehicle_info = vehicle_info;
     this.sale_info = sale_info;
     this.condition = condition;
-    this.bid = bid;
-    this.time_left = time_left;
 };
 
 function Bid_and_time(bid, time_left){
@@ -37,8 +35,6 @@ car1 = new Car(
   "Odometer 4434 (ACTUAL)",
   "Dubai, AE",
   "Crushed",
-  "3D 1H 23min",
-  125
 );
 
 car2 = new Car(
@@ -47,8 +43,6 @@ car2 = new Car(
   "Odometer 123593 (ACTUAL)",
   "Halban, OM",
   "Normal wear Damage Key Available",
-  "1D 1H 23min",
-  225
 );
 
 car3 = new Car(
@@ -57,8 +51,6 @@ car3 = new Car(
   "Odometer 442 (Depricated)",
   "Muscat, OM",
   "Medicore Broken seats",
-  "1H 15min",
-  585
 );
 
 car4 = new Car(
@@ -67,8 +59,6 @@ car4 = new Car(
   "Odometer 6521 (ACTUAL)",
   "Barka, OM",
   "Clean and good shape!",
-  "49min",
-  1911
 );
 
 // Initilizing bid and time object
