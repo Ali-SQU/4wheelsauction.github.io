@@ -18,34 +18,33 @@ document.getElementById("questionnaireForm").addEventListener("submit", function
     phoneError.textContent = "";
     serviceError.textContent = "";
 
-    // Name validation - must be at least 3 characters
-    if (name.length < 3) {
-        nameError.textContent = "Name must be at least 3 characters long.";
+    // Name validation
+    const namePattern = /^[a-zA-Z\s]{3,}$/;
+    if (!namePattern.test(name)) {
+        nameError.textContent = "Name must contain only letters and be at least 3 characters long.";
         isValid = false;
     }
 
-    // Email validation - must follow a valid email format
+    // Email validation
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-        emailError.textContent = "Please enter a valid email address.";
+    if (!emailPattern.test(email) || email.length > 254) {
+        emailError.textContent = "Please enter a valid email address (maximum 254 characters).";
         isValid = false;
     }
 
-      // Phone validation - must follow a valid international phone number format
-      const phonePattern = /^\+?[0-9]{7,15}$/;
-      if (!phonePattern.test(phone)) {
-          phoneError.textContent = "Please enter a valid phone number (e.g., +123456789 or 123456789).";
-          isValid = false;
-      }
-
-    // Service selection validation - must select an option
-    if (service === "") {
-        serviceError.textContent = "Please select how you heard about us.";
+    // Phone validation
+    const phonePattern = /^\+?[0-9]{7,15}$/;
+    if (!phonePattern.test(phone) || phone.includes(" ")) {
+        phoneError.textContent = "Phone number must be 7-15 digits, and cannot include spaces.";
         isValid = false;
     }
 
-
-
+    // Service selection validation
+    const validServices = ["Referral", "Advertisement", "Social Media", "Other"]; // Example options
+    if (!validServices.includes(service)) {
+        serviceError.textContent = "Please select a valid service option.";
+        isValid = false;
+    }
 
     // If all validations pass, submit the form
     if (isValid) {
