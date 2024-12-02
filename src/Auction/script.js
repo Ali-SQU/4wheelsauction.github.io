@@ -24,12 +24,13 @@ function Car(img_src, lot_info, vehicle_info, sale_info, condition){
     this.condition = condition;
 
     // search method that will search for specific keyword within the object's property
-    this.search_keyword = function(search_keyword){ 
-      if (this.img_src.includes(search_keyword)) {return true;}
-      if (this.lot_info.includes(search_keyword)) {return true;}
-      if (this.vehicle_info.includes(search_keyword)) {return true;}
-      if (this.sale_info.includes(search_keyword)) {return true;}
-      if (this.condition.includes(search_keyword)) {return true;}
+    this.search_keyword = function(search_keyword){
+      search_keyword = search_keyword.toLowerCase(); 
+      if (this.img_src.toLowerCase().includes(search_keyword)) {return true;}
+      if (this.lot_info.toLowerCase().includes(search_keyword)) {return true;}
+      if (this.vehicle_info.toLowerCase().includes(search_keyword)) {return true;}
+      if (this.sale_info.toLowerCase().includes(search_keyword)) {return true;}
+      if (this.condition.toLowerCase().includes(search_keyword)) {return true;}
       return false
     };
 };
@@ -89,4 +90,38 @@ bid4 = new Bid_and_time(1911, "49min");
 // saving object into array
 let auction_array = [car1, car2, car3, car4, car1, car2, car3, car4, car1, car2];
 let bid_array = [bid1, bid2, bid3, bid4, bid1, bid2, bid3, bid4, bid1, bid2];
+
+// process user input in this case search box form
+const form = document.getElementById("search_form");
+const search_input = document.getElementById("search_input");
+
+form.addEventListener("submit", (event) =>{ // handle submit button
+  event.preventDefault(); // This prevent the page from reloading whenever a form is submited
+  const search_text = search_input.value;
+  
+  let index_keyword = [];
+  // search array
+  for (let index = 0; index < auction_array.length; index++){
+    if ((auction_array[index].search_keyword(search_text))){
+      index_keyword.push(index);
+    }
+    if ((bid_array[index].search_keyword_bid(search_text))){
+      index_keyword.push(index);
+    }
+  }
+  
+  // hide all the page that does include
+  for (let i = 0; i < 10; i++){
+    let row_id = "dynamic_auction_row_" + (i + 1);
+    let row_element = document.getElementById(row_id);
+    
+    // Hides the row if not matched with keyword
+    if (index_keyword.includes(i)){
+      row_element.style.display = ""; // revert to default value
+    }else{
+      row_element.style.display = "none";
+    }
+  }
+
+});
 
