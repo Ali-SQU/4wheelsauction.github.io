@@ -100,7 +100,7 @@ class Obstacle{
 }
 
 function main(){
-  disable_zoom();
+  // disable_zoom();
   gameLoop();
   input();
 
