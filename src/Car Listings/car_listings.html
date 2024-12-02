@@ -12,6 +12,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <!-- Reactjs framework -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!--Link font Awesome for icons use -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -157,7 +161,7 @@
               <th>Mileage (km)</th>
             </tr>
           </thead>
-          <tbody>
+          <!-- <tbody>
             <tr>
               <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
               <td>Car Model</td>
@@ -169,74 +173,44 @@
             <tr>
               <td colspan="3">Additional Description/Comments</td>
             </tr>
-            <tr>
-              <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
-              <td>Car Model</td>
-              <td>Price</td>
-              <td>Mileage</td>
-              <td rowspan="2">Type</td>
-              <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">View Details</a></td>
-            </tr>
-            <tr>
-              <td colspan="3">Additional Description/Comments</td>
-            </tr>
-            <tr>
-              <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
-              <td>Car Model</td>
-              <td>Price</td>
-              <td>Mileage</td>
-              <td rowspan="2">Type</td>
-              <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">View Details</a></td>
-            </tr>
-            <tr>
-              <td colspan="3">Additional Description/Comments</td>
-            </tr>
-            <tr>
-              <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
-              <td>Car Model</td>
-              <td>Price</td>
-              <td>Mileage</td>
-              <td rowspan="2">Type</td>
-              <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">View Details</a></td>
-            </tr>
-            <tr>
-              <td colspan="3">Additional Description/Comments</td>
-            </tr>
-            <tr>
-              <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
-              <td>Car Model</td>
-              <td>Price</td>
-              <td>Mileage</td>
-              <td rowspan="2">Type</td>
-              <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">View Details</a></td>
-            </tr>
-            <tr>
-              <td colspan="3">Additional Description/Comments</td>
-            </tr>
-            <tr>
-              <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
-              <td>Car Model</td>
-              <td>Price</td>
-              <td>Mileage</td>
-              <td rowspan="2">Type</td>
-              <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">View Details</a></td>
-            </tr>
-            <tr>
-              <td colspan="3">Additional Description/Comments</td>
-            </tr>
-            <tr>
-              <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
-              <td>Car Model</td>
-              <td>Price</td>
-              <td>Mileage</td>
-              <td rowspan="2">Type</td>
-              <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">View Details</a></td>
-            </tr>
-            <tr>
-              <td colspan="3">Additional Description/Comments</td>
-            </tr>
-            
-          </tbody>
+          </tbody> -->
+
+          <!-- Initial display 10 first rows  -->
+          <!-- This may change depending on the page. -->
+          <tbody id="dynamic_listing_row_1"></tbody>
+          <tbody id="dynamic_listing_row_2"></tbody>
+          <tbody id="dynamic_listing_row_3"></tbody>
+          <tbody id="dynamic_listing_row_4"></tbody>
+          <tbody id="dynamic_listing_row_5"></tbody>
+          <tbody id="dynamic_listing_row_6"></tbody>
+          <tbody id="dynamic_listing_row_7"></tbody>
+          <tbody id="dynamic_listing_row_8"></tbody>
+          <tbody id="dynamic_listing_row_9"></tbody>
+          <tbody id="dynamic_listing_row_10"></tbody>
+
+          <!-- React js componenets -->
+          <script type="text/babel">
+            function Row_table_listing({ item1, item2 }){
+              return ( 
+                <tr>
+                  <td rowspan="2"><img src={item1.img_src} width="250px" height="auto"/></td>
+                  <td>{item1.car_model}</td>
+                  <td>{item2.price}</td>
+                  <td>{item2.mileage}</td>
+                  <td rowspan="2">{item1.type}</td>
+                  <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">{item1.detail}</a></td>
+                  <td colspan="3">{item1.addition_comment}</td>
+                </tr>
+              );
+            };
+
+          // detail_array and price_mileage_array are from script.js
+          // Renders all element from array
+          for (let i = 1; i <= 10; i++){
+            ReactDOM.createRoot(document.getElementById('dynamic_listing_row_'+i)).render(<Row_table_listing item1={detail_array[i-1]} item2={price_mileage_array[i-1]}/>);
+          }
+
+          </script>
         </table>
       </section>
     </div>
