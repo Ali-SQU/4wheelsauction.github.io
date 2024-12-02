@@ -15,6 +15,6 @@ function check() {
     }
     else{
         alert("Congratulations... you now have an activated account with us!");
-        document.getElementById("sign").submit(); 
+        
     }
 }
