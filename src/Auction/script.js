@@ -12,64 +12,73 @@ window.onscroll = function () {
 scrollUpBtn.onclick = function () {
     window.scrollTo(0, 0);
 };
-// array 
-car_obj_array = [];
-auction_item_array = [];
-let auction_row  = document.getElementById("dynamic_auction_row");
 
 // objects for auction 
-function Car(img_src, lot_info, vehicle_info, sale_info, condition, bid){
+// Dynamically update the site using React js
+function Car(img_src, lot_info, vehicle_info, sale_info, condition, time_left, bid){
     this.img_src = img_src;
     this.lot_info = lot_info;
     this.vehicle_info = vehicle_info;
     this.sale_info = sale_info;
     this.condition = condition;
     this.bid = bid;
-    this.update = function(){
-
-    };
-};
-
-function Auction_item(car, time_left){
-    this.car = car;
     this.time_left = time_left;
 };
 
-// initilize the two object
-car_obj_array.push(new Car("..\\src\\Auction\\img\\car_auct_demo1.jpg",
-    "2020 CHEVROLET TAHOE C1500 LS",
-    "Odometer \n123593\jn(ACTUAL)",
-    "Halban, OM",
-    "Normal wear\nDamage\nkey Available",
-    200
-))
+function Bid_and_time(bid, time_left){
+    this.bid = bid;
+    this.time_left = time_left;
+};
 
-auction_row.innerHTML = "";
+// Initilize car object
+car1 = new Car(
+  "img/car_auct_demo1.jpg",
+  "2012 Mercidies  C1500 LS",
+  "Odometer 4434 (ACTUAL)",
+  "Dubai, AE",
+  "Crushed",
+  "3D 1H 23min",
+  125
+);
 
-// this will dyanmical generate using .innerHTML 
-// the value will be dyanamically updated from the Car object array
-<tr>
-<th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-<td>2020 CHEVROLET TAHOE C1500 LS</td>
-<td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-<td>
-  Halban, OM<br/>
-  <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-</td>
-<td>
-  Normal wear<br/>
-  Damage<br/>
-  key Available
-</td>
-<td>
-  Current Bid:<br/>
-  200 OMR<br/>
-  <div style="margin-top: 1em;">
-    <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-    <span id="bidding-hint">Bid according to increment rule</span><br/>
-    <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-    <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-    <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-  </div>
-</td>
-</tr>
+car2 = new Car(
+  "img/Chevrolet_car_demo.jpeg",
+  "2020 CHEVROLET TAHOE C1500 LS",
+  "Odometer 123593 (ACTUAL)",
+  "Halban, OM",
+  "Normal wear Damage Key Available",
+  "1D 1H 23min",
+  225
+);
+
+car3 = new Car(
+  "img/BMW_car_demo.jpeg", 
+  "2015 BMW S4",
+  "Odometer 442 (Depricated)",
+  "Muscat, OM",
+  "Medicore Broken seats",
+  "1H 15min",
+  585
+);
+
+car4 = new Car(
+  "img/Audi_car_demo.jpg", 
+  "2020 Audi A7",
+  "Odometer 6521 (ACTUAL)",
+  "Barka, OM",
+  "Clean and good shape!",
+  "49min",
+  1911
+);
+
+// Initilizing bid and time object
+bid1 = new Bid_and_time(125, "3D 1H 23min");
+bid2 = new Bid_and_time(225, "1D 1H 23min");
+bid3 = new Bid_and_time(585, "1H 15min");
+bid4 = new Bid_and_time(1911, "49min");
+
+
+// saving object into array
+let auction_array = [car1, car2, car3, car4, car1, car2, car3, car4, car1, car2];
+let bid_array = [bid1, bid2, bid3, bid4, bid1, bid2, bid3, bid4, bid1, bid2];
+

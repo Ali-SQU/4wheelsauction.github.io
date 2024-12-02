@@ -12,6 +12,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <!-- Reactjs framework -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <!--Link font Awesome for icons use -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -69,184 +73,51 @@
             <th id="header-style-table"  scope="col">Bid</th>
           </tr>
         </thead>
-        <tbody id="dynamic_auction_row">
-          <tr>
-            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-            <td>2020 CHEVROLET TAHOE C1500 LS</td>
-            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-            <td>
-              Halban, OM<br/>
-              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-            </td>
-            <td>
-              Normal wear<br/>
-              Damage<br/>
-              key Available
-            </td>
-            <td>
-              Current Bid:<br/>
-              200 OMR<br/>
-              <div style="margin-top: 1em;">
-                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-                <span id="bidding-hint">Bid according to increment rule</span><br/>
-                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-              </div>
-            </td>
-          </tr>
-          <!-- <tr>
-            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-            <td>2020 CHEVROLET TAHOE C1500 LS</td>
-            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-            <td>
-              Halban, OM<br/>
-              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-            </td>
-            <td>
-              Normal wear<br/>
-              Damage<br/>
-              key Available
-            </td>
-            <td>
-              Current Bid:<br/>
-              200 OMR<br/>
-              <div style="margin-top: 1em;">
-                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-                <span id="bidding-hint">Bid according to increment rule</span><br/>
-                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-            <td>2020 CHEVROLET TAHOE C1500 LS</td>
-            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-            <td>
-              Halban, OM<br/>
-              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-            </td>
-            <td>
-              Normal wear<br/>
-              Damage<br/>
-              key Available
-            </td>
-            <td>
-              Current Bid:<br/>
-              200 OMR<br/>
-              <div style="margin-top: 1em;">
-                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-                <span id="bidding-hint">Bid according to increment rule</span><br/>
-                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-            <td>2020 CHEVROLET TAHOE C1500 LS</td>
-            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-            <td>
-              Halban, OM<br/>
-              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-            </td>
-            <td>
-              Normal wear<br/>
-              Damage<br/>
-              key Available
-            </td>
-            <td>
-              Current Bid:<br/>
-              200 OMR<br/>
-              <div style="margin-top: 1em;">
-                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-                <span id="bidding-hint">Bid according to increment rule</span><br/>
-                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-            <td>2020 CHEVROLET TAHOE C1500 LS</td>
-            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-            <td>
-              Halban, OM<br/>
-              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-            </td>
-            <td>
-              Normal wear<br/>
-              Damage<br/>
-              key Available
-            </td>
-            <td>
-              Current Bid:<br/>
-              200 OMR<br/>
-              <div style="margin-top: 1em;">
-                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-                <span id="bidding-hint">Bid according to increment rule</span><br/>
-                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-            <td>2020 CHEVROLET TAHOE C1500 LS</td>
-            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-            <td>
-              Halban, OM<br/>
-              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-            </td>
-            <td>
-              Normal wear<br/>
-              Damage<br/>
-              key Available
-            </td>
-            <td>
-              Current Bid:<br/>
-              200 OMR<br/>
-              <div style="margin-top: 1em;">
-                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-                <span id="bidding-hint">Bid according to increment rule</span><br/>
-                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row" style="width: 200;"><img src="img\car_auct_demo1.jpg" width="160" height="120" alt="car image"/></th>
-            <td>2020 CHEVROLET TAHOE C1500 LS</td>
-            <td> Odometer <br/>123593 <br/>(ACTUAL)<br/></td>
-            <td>
-              Halban, OM<br/>
-              <span id="auction-date-text" class="text-danger">Auction Ends at 7D 18H 39min </span>
-            </td>
-            <td>
-              Normal wear<br/>
-              Damage<br/>
-              key Available
-            </td>
-            <td>
-              Current Bid:<br/>
-              200 OMR<br/>
-              <div style="margin-top: 1em;">
-                <input type="number" name="bid_value" style="width: 105px;" value="200" min="200"/><label style="text-indent: 4px;">OMR</label><br/>
-                <span id="bidding-hint">Bid according to increment rule</span><br/>
-                <button type="button" class="btn btn-primary" style="margin-top: 0.45em; width: 88px;">Bid</button>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style="margin-top: 0.45em; width: 120px;">More Detail</button></a>
-                <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style="margin-top: 0.45em; width: 140px;">Add to watchlist</button></a>
-              </div>
-            </td>
-          </tr> -->
-          
-        </tbody>
+        <!-- Initial display 10 first rows  -->
+         <!-- This may change depending on the page. -->
+        <tbody id="dynamic_auction_row_1"></tbody>
+        <tbody id="dynamic_auction_row_2"></tbody>
+        <tbody id="dynamic_auction_row_3"></tbody>
+        <tbody id="dynamic_auction_row_4"></tbody>
+        <tbody id="dynamic_auction_row_5"></tbody>
+        <tbody id="dynamic_auction_row_6"></tbody>
+        <tbody id="dynamic_auction_row_7"></tbody>
+        <tbody id="dynamic_auction_row_8"></tbody>
+        <tbody id="dynamic_auction_row_9"></tbody>
+        <tbody id="dynamic_auction_row_10"></tbody>
+        <script type="text/babel">
+          // Reactjs componenet.
+          function Row_table({item, item2}) {
+            return (
+              <tr>
+                <th scope="row" style={{ width: '200px' }}>
+                  <img src={item.img_src} width="160" height="120" alt="car image" />
+                </th>
+                <td>{item.lot_info}</td>
+                <td>{item.vehicle_info}</td>
+                <td>{item.sale_info}<span id="auction-date-text" class="text-danger"><br/>Auction Ends at {item.time_left}</span></td>
+                <td>{item.condition}</td>
+                <td>
+                  Current Bid:<br />
+                  {item.bid} OMR<br />
+                  <div style={{ marginTop: '1em' }}>
+                    <input type="number" name="bid_value" style={{ width: '105px' }} value={item.bid} min="200" /><label style={{ textIndent: '4px' }}>OMR</label><br />
+                    <span id="bidding-hint">Bid according to increment rule</span><br />
+                    <button type="button" class="btn btn-primary" style={{ marginTop: '0.45em', width: '88px' }}>Bid</button>
+                    <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-warning" style={{ marginTop: '0.45em', width: '120px' }}>More Detail</button></a>
+                    <a href="..\Car Details\car_details.html"><button type="button" class="btn btn-success btn-sm" style={{ marginTop: '0.45em', width: '140px' }}>Add to watchlist</button></a>
+                  </div>
+                </td>
+              </tr>
+            );
+          };
+
+          // Renders all element from array
+          for (let i = 1; i <= 10; i++){
+            ReactDOM.createRoot(document.getElementById('dynamic_auction_row_'+i)).render(<Row_table item={auction_array[i-1]} />);
+          }
+
+        </script>
       </table>
     </div>
   </main>
