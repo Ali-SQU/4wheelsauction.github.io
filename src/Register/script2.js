@@ -11,7 +11,7 @@ function check() {
     }
     // now check which one is selected, to alert the user or to mpve tp another page
     if (userSelect === 'business' || userSelect === 'vip') {
-        window.location.href="https://github.com/Ali-SQU/4wheelsauction.github.io/blob/16bb734664c05219c34296233dc2a36cf8c7e3fe/src/Calculation%20page/calculation.html";
+        window.location.href="../Calculation page/calculation.html";
     }
     else{
         alert("Congratulations... you now have an activated account with us!");
