@@ -6,7 +6,7 @@ const context = canvas.getContext("2d");
 // Car's global variables.
 let car_position = {x: 450, y: 750};
 const car_speed = 26;
-const road_lane = [85, 125, 138, 164, 242, 250, 268, 295, 450, 476, 528, 580, 606, 370]; // 350 for manic drivers
+const road_lane = [85, 125, 138, 164, 242, 250, 268, 295, 450, 476, 528, 580, 606, 370]; 
 const obsticle_color = ['Yellow', 'white', 'green', 'pink'];
 const obsticle_speed_offset = 3; //3 
 let obs_y = 25;
@@ -69,17 +69,17 @@ class Obstacle{
   generate_randomly(){
     // generate car in specific lane
     let select_lane = Math.floor(Math.random() * road_lane.length);
-    this.#x = road_lane[select_lane] - (this.#width / 2);
+    this.#x = road_lane[select_lane] - (this.#width / 2); // correctly positions the car into the lane
 
     // select color of obsticle
     let select_color = Math.floor(Math.random() * obsticle_color.length);
     this.#color = obsticle_color[select_color];
     
     // Generate random obsticle speed that will be added to the obsticle_speed_offset
-    // Randomly generate number between 0 to  
+    // Randomly generate number between 0 to 5
     let additional_speed = Math.floor(Math.random() * 5);
     this.#speed = obsticle_speed_offset + additional_speed;
-    this.#y = -this.#height; // spawn at top of the canvas
+    this.#y = -this.#height; // spawn at top of the canvas, moving downward
   }
 
   /*
@@ -202,7 +202,7 @@ function input(){
  * Detect if player collided with obsticle
 */
 function detectCollision(){
-  obs_obj.forEach((obs)=>{
+  obs_obj.forEach((obs)=>{ // iterate each object in the array to check if any object coliide with player
     // detect collision at front of the player car
     if (car_position.y + 70 > obs.getY && car_position.y < obs.getY + obs.getHeight){ // check collision at y-axis
       if (car_position.x + 50 > obs.getX && car_position.x < obs.getX + obs.getWidth){ // check collision at x-axis
@@ -217,7 +217,6 @@ function detectCollision(){
 * Pauses the game and restart if player loses
 **/
 function gameOver(){
-  // alert("colision!!"); //test
   game_over_flag = true; // set game state into gameover
 
   // Display empty background
@@ -244,7 +243,7 @@ function gameOver(){
 
 /*
 * Manages spawn and spawn rate of obsticle(car).
-* @Input: Max_generation - maxium number of obsticle spawn
+* @Input: Max_generation - maxium number of obsticle spawn.
 */ 
 function obsticle_manager(Max_generation){
   // remove all the destroyed object
@@ -258,7 +257,7 @@ function obsticle_manager(Max_generation){
   }
 
   // update the state of obsticle
-  obs_obj.forEach((obs) =>{
+  obs_obj.forEach((obs) =>{ // check which obisticle is outside the range
     obs.update(); // update car for each object in the array
     if (obs.getY > canvas_size.height){ // destroys object that is out of screen
       obs.destroy();
