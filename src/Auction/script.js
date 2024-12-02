@@ -13,6 +13,7 @@ scrollUpBtn.onclick = function () {
     window.scrollTo(0, 0);
 };
 
+
 // objects for auction 
 // Dynamically update the site using React js
 function Car(img_src, lot_info, vehicle_info, sale_info, condition){
@@ -21,11 +22,28 @@ function Car(img_src, lot_info, vehicle_info, sale_info, condition){
     this.vehicle_info = vehicle_info;
     this.sale_info = sale_info;
     this.condition = condition;
+
+    // search method that will search for specific keyword within the object's property
+    this.search_keyword = function(search_keyword){ 
+      if (this.img_src.includes(search_keyword)) {return true;}
+      if (this.lot_info.includes(search_keyword)) {return true;}
+      if (this.vehicle_info.includes(search_keyword)) {return true;}
+      if (this.sale_info.includes(search_keyword)) {return true;}
+      if (this.condition.includes(search_keyword)) {return true;}
+      return false
+    };
 };
 
 function Bid_and_time(bid, time_left){
     this.bid = bid;
     this.time_left = time_left;
+
+    // search method that will search for specific keyword within the object's property
+    this.search_keyword_bid = function(search_keyword){ 
+      if (this.bid.toString().includes(search_keyword)) {return true;}
+      if (this.time_left.includes(search_keyword)) {return true;}
+      return false
+    };
 };
 
 // Initilize car object
