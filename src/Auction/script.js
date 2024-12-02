@@ -122,6 +122,5 @@ form.addEventListener("submit", (event) =>{ // handle submit button
       row_element.style.display = "none";
     }
   }
-
 });
 

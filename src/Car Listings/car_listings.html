@@ -54,7 +54,15 @@
     </nav>
   </div>
 
-
+    <!-- Search Form that will be used to search for specific keyword using bootstrap -->
+    <div class="container my-3"> 
+      <form id="search_form">
+        <div class="input-group">
+          <input type="text" class="form-control" id="search_input" placeholder="Search by Keyword">
+          <button class="btn btn-primary" type="submit" id="search_button">Search</button>
+        </div>
+      </form>
+    </div>
   <main class="container mt-5">
     <div class="row">
       <!-- Filters Section -->
@@ -161,19 +169,6 @@
               <th>Mileage (km)</th>
             </tr>
           </thead>
-          <!-- <tbody>
-            <tr>
-              <td rowspan="2"><img src="./Images/car.jpg" alt="Car Image" style="width: 250px; height: auto;"></td>
-              <td>Car Model</td>
-              <td>Price</td>
-              <td>Mileage</td>
-              <td rowspan="2">Type</td>
-              <td rowspan="2"><a href="..\Car Details\car_details.html" class="btn btn-dark-custom">View Details</a></td>
-            </tr>
-            <tr>
-              <td colspan="3">Additional Description/Comments</td>
-            </tr>
-          </tbody> -->
 
           <!-- Initial display 10 first rows  -->
           <!-- This may change depending on the page. -->
@@ -216,12 +211,10 @@
     </div>
   </main>
   
-  
     <!-- Up Arrow Button -->
     <button id="scrollUpBtn" style="display: none;">
       <i class="fa-solid fa-circle-up"></i>
     </button>
-  
 
   <!-- Footer Start -->
   <footer class="text-light footer_box" style="background-color: #192039;">
