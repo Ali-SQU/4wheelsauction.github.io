@@ -33,7 +33,8 @@
       <!-- Navigation Layout justify to the left -->
       <div class="container-fluid">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link" href="Fun Page\funpage.html"><img src="Home Images\logo.png" alt="logo" width="50px" height="50px" /></a></li>
+          <li class="nav-item"><a class="nav-link" href="Fun Page\funpage.html"><img src="Home Images\logo.png"
+                alt="logo" width="50px" height="50px" /></a></li>
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="Car Listings\car_listings.html">Car Listings</a></li>
           <li class="nav-item"><a class="nav-link" href="Auction\auction.html">Auction</a></li>
@@ -68,7 +69,7 @@
       </div>
     </section>
 
-    
+
     <!-- Categories Section -->
     <section class="container my-5">
       <h2 class="text-center mb-4">Popular Categories</h2>
@@ -141,7 +142,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- Explore All Vehicles Button -->
     <div class="text-center my-4">
       <a href="Car Listings\car_listings.html" class="btn btn-outline-primary btn-lg" id="Explore_all">Explore All
@@ -236,18 +237,33 @@
               Sign up to receive real-time updates on our latest sales and auctions, with detailed information on
               vehicle pricing, customs fees, and shipping options.
             </p>
-            <form class="mt-4">
+            <!-- Subscription Form -->
+            <form class="mt-4" action="subscribe.php" method="POST">
               <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Enter your email" required>
+                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                 <button class="btn btn-primary" type="submit" style="font-size: 1rem;">Subscribe</button>
               </div>
               <small style="color: rgb(0, 0, 0);">We respect your privacy. Unsubscribe anytime.</small>
             </form>
-
+            <script>
+              // Check if the success or error message is present in the URL parameters
+              window.onload = function () {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('success')) {
+                  const success = urlParams.get('success');
+                  if (success === 'true') {
+                    alert("You have successfully subscribed!");
+                  } else {
+                    alert("There was an error with your subscription. Please try again.");
+                  }
+                }
+              };
+            </script>
           </div>
         </div>
       </div>
     </section>
+
 
 
     <!-- Quick Links Section -->
@@ -263,7 +279,7 @@
         <div class="col-md-3 mb-4">
           <a href="Sell or Auction Car\sell_auction.html" class="btn btn-outline-primary w-100">Sell Your Car</a>
         </div>
-      
+
         <div class="col-md-3 mb-4">
           <a href="About Us/about.html#FAQ" class="btn btn-outline-primary w-100">FAQ</a>
         </div>
@@ -276,8 +292,8 @@
         <div class="col-md-3 mb-4">
           <a href="Fun Page/funpage.html" class="btn btn-outline-primary w-100">Fun Page</a>
         </div>
-   
-   
+
+
       </div>
     </section>
   </main>
