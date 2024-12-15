@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link stylesheet -->
+  <link href="style.css" rel="stylesheet" />
+  <!-- Link Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- Reactjs framework -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!--Link font Awesome for icons use -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>4WheelsAuction: Bid on Vehicles with Real-Time Auction Insights</title>
+  <link rel="icon" type="image/png" href="./img/logo2.png">
+  <style>
+    .table-spacing{
+      padding-top: 2.5em;
+    }
+
+    #header-style-table{
+      background-color: #192039;
+      color: whitesmoke;
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <!-- The navigation bar HEADER -->
+  <div class="container-fluid" id="nav_custom">
+    <nav class="navbar navbar-expand-sm bg-dark-custom navbar-dark">
+      <!-- Navigation Layout justify to the left -->
+      <div class="container-fluid">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><img src="logo.png" alt="logo" width="50px" height="50px" /></li>
+          <li class="nav-item"><a class="nav-link" href="..\index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="..\Car Listings\car_listings.html">Car Listings</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Auction</a></li>
+          <li class="nav-item"><a class="nav-link" href="..\Car Details\car_details.html">Car Detail</a></li>
+          <li class="nav-item"><a class="nav-link" href="..\Sell or Auction Car\sell_auction.html">Sell/Auction Your Car</a></li>
+        </ul>
+        <!-- Navigation Layout justify to the right -->
+        <ul class="navbar-nav">
+          <a href="../Register/login.html"><li class="nav-item"><button type="button" class="btn btn-outline-light me-2" style="margin-left: 10px;">Login</button></li></a>
+          <a href="../Register/sign_up.html"><li class="nav-item"><button type="button" class="btn btn-light" style="margin-left: 10px;">Sign-up</button></li></a>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- Search Form that will be used to search for specific keyword using bootstrap -->
+    <div class="container my-3"> 
+      <form id="search_form">
+        <div class="input-group">
+          <input type="text" class="form-control" id="search_input" placeholder="Search by Keyword">
+          <button class="btn btn-primary" type="submit" id="search_button">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container table-spacing">
+      <table class="table">
+        <thead class="thead-dark test">
+          <tr>
+            <th id="header-style-table"  scope="col">image</th>
+            <th id="header-style-table"  scope="col">Lot Info</th>
+            <th id="header-style-table"  scope="col">Vehicle Info</th>
+            <th id="header-style-table"  scope="col">Sale Info</th>
+            <th id="header-style-table"  scope="col">Condition</th>
+            <th id="header-style-table"  scope="col">Bid</th>
+          </tr>
+        </thead>
+        <!-- Initial display 10 first rows  -->
+         <!-- This may change depending on the page. -->
+        <!-- <tbody id="dynamic_auction_row_1"></tbody>
+        <tbody id="dynamic_auction_row_2"></tbody>
+        <tbody id="dynamic_auction_row_3"></tbody>
+        <tbody id="dynamic_auction_row_4"></tbody>
+        <tbody id="dynamic_auction_row_5"></tbody>
+        <tbody id="dynamic_auction_row_6"></tbody>
+        <tbody id="dynamic_auction_row_7"></tbody>
+        <tbody id="dynamic_auction_row_8"></tbody>
+        <tbody id="dynamic_auction_row_9"></tbody>
+        <tbody id="dynamic_auction_row_10"></tbody> -->
+
+              <!-- PHP source code -->
+  <?php
+    $server_name = "localhost";
+    $username = "root";
+    $password = "";
+    $db_name = "dummy_auction_data";
+    $conn = "";
+
+    // connecting to mysql server
+    $conn = mysqli_connect($server_name, $username, $password, $db_name);
+    
+    // Check connection
+    if (!$conn){
+      die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT * FROM auction_table";
+    $result = mysqli_query($conn, $sql);
+
+    // if (mysqli_num_rows($result) > 0) {
+    //   // output data of each row
+    //   while($row = mysqli_fetch_assoc($result)) {
+    //   echo "id: " . $row["sid"].
+    //   " - Name: " . $row["name"].
+    //   " - College:" . $row["col"]. "<br>";
+    //   }
+    // } else {
+    //     echo "No students were found";
+    //   }
+
+    $row = mysqli_fetch_assoc($result);
+    $row_db = array($row["image_path"], 
+                    $row["Lot Info"], 
+                    $row["Sale Info"], 
+                    $row["Vehicle Info"], 
+                    $row["Sale Info"], 
+                    $row["Car_condition"], 
+                    $row["Car_condition"]);
+    
+    $sale_info_db =  $row["Sale Info"];
+    $image_db =  $row["image_path"];
+    $lot_info_db = $row["Lot Info"];
+    $vehicle_info_db = $row["Vehicle Info"];
+    $sale_info_db =  $row["Sale Info"];
+    $condition_db = $row["Car_condition"];
+    $bid_db = $row["Bid"];
+    
+
+    for ($i = 0; $i < 10; $i++){
+    echo "<tr>".
+         "<th scope='row' style=width='200px'>".
+         "<img src= $image_db width='160' height='120' alt='car image' />".
+         "</th>".
+         "<td> $lot_info_db</td>".
+         "<td>$vehicle_info_db</td>".
+         "<td>$sale_info_db<span id='auction-date-text' class='text-danger'><br/>Auction Ends at <br/>2hr and 40min</span></td>".
+         "<td>$condition_db</td>".
+         "<td>".
+         "Current Bid:<br/>".
+         $bid_db." OMR<br/>".
+         "<div style= 'marginTop: 1em'>".
+         "<input type='number' name='bid_value' style='width: 105px'  value= $bid_db min=$bid_db /><label style='textIndent: 4px'> OMR</label><br/>".
+         "<span id='bidding-hint'>Bid according to increment rule</span><br />".
+         "<button type='button' class='btn btn-primary' style=' marginTop: '0.45em', width: '88px'>Bid</button>".
+         "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-warning' style=' marginTop: '0.45em', width: '120px'>More Detail</button></a>".
+         "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-success btn-sm' style=' marginTop: '0.45em', width: '140px'>Add to watchlist</button></a>".
+         "</div>".
+         "</td>".
+         "</tr>";
+    }
+  ?>
+  
+        <script type="text/babel">
+          // Reactjs componenet.
+          /* Dynamical updates the site using React */
+          function Row_table({ item1, item2 }) {
+            return (
+              <tr>
+                <th scope="row" style={{ width: '200px' }}>
+                  <img src={item1.img_src} width="160" height="120" alt="car image" />
+                </th>
+                <td>{item1.lot_info}</td>
+                <td>{item1.vehicle_info}</td>
+                <td>{item1.sale_info}<span id="auction-date-text" className="text-danger"><br/>Auction Ends at {item2.time_left}</span></td>
+                <td>{item1.condition}</td>
+                <td>
+                  Current Bid:<br />
+                  {item2.bid} OMR<br />
+                  <div style={{ marginTop: '1em' }}>
+                    <input type="number" name="bid_value" style={{ width: '105px' }} value={item2.bid} min="200" /><label style={{ textIndent: '4px' }}>OMR</label><br />
+                    <span id="bidding-hint">Bid according to increment rule</span><br />
+                    <button type="button" class="btn btn-primary" style={{ marginTop: '0.45em', width: '88px' }}>Bid</button>
+                    <a href="..\Car Details\car_details.html"><button type="button" className="btn btn-warning" style={{ marginTop: '0.45em', width: '120px' }}>More Detail</button></a>
+                    <a href="..\Car Details\car_details.html"><button type="button" className="btn btn-success btn-sm" style={{ marginTop: '0.45em', width: '140px' }}>Add to watchlist</button></a>
+                  </div>
+                </td>
+              </tr>
+            );
+          };
+          // auction_array and bid_array are defined in main.js relative to this folder
+          // Renders all element from array
+          for (let i = 1; i <= 10; i++){
+            ReactDOM.createRoot(document.getElementById('dynamic_auction_row_'+i)).render(<Row_table item1={auction_array[i-1]} item2={bid_array[i - 1]}/>);
+          }
+
+        </script>
+      </table>
+    </div>
+  </main>
+
+  <!-- Up Arrow Button -->
+  <button id="scrollUpBtn" style="display: none;">
+    <i class="fa-solid fa-circle-up"></i>
+  </button>
+
+
+  <!-- Footer Start -->
+  <footer class="text-light footer_box" style="background-color: #192039;">
+    <div class="container py-5">
+      <div class="row">
+        <!-- Get to Know Us Section -->
+        <div class="col-sm-6 col-md-3 mb-3">
+          <h5>Get to Know Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="..\About Us\about.html" style="color:#9598a6" class="footer-links">About 4 Wheels Auction</a></li>
+            <li><a href="..\About Us\about.html#mission" style="color:#9598a6" class="footer-links">Our Mission</a></li>
+            <li><a href="..\About Us\about.html" style="color:#9598a6" class="footer-links">The Team</a></li>
+          </ul>
+        </div>
+
+        <!-- Find a Vehicle Section -->
+        <div class="col-sm-6 col-md-3 mb-3">
+          <h5>Find a Vehicle</h5>
+          <ul class="list-unstyled">
+            <li><a href="..\Car Listings\car_listings.html" style="color:#9598a6" class="footer-links">Search Vehicles</a></li>
+            <li><a href="..\Car Listings\car_listings.html" style="color:#9598a6" class="footer-links">Car Listings</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Section -->
+        <div class="col-sm-6 col-md-3 mb-3">
+          <h5>Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="..\Sell or Auction Car\sell_auction.html" style="color:#9598a6" class="footer-links">Sell/Auction</a></li>
+            <li><a href="..\Sell or Auction Car\sell_auction.html" style="color:#9598a6" class="footer-links">Shipping Options</a></li>
+          </ul>
+        </div>
+
+        <!-- Support Section -->
+        <div class="col-sm-6 col-md-3 mb-3">
+          <h5>Support</h5>
+          <ul class="list-unstyled">
+            <li><a href="..\About Us\about.html" style="color:#9598a6" class="footer-links">FAQs</a></li>
+            <li><a href="..\About Us\about.html" style="color:#9598a6" class="footer-links">How to Buy</a></li>
+            <li><a href="..\Contact Us\contact.html" style="color:#9598a6" class="footer-links">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <!-- Social Media & Copyright -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="text-center text-md-start mb-3 mb-md-0">
+          <p class="mb-0">©2024 4 Wheels Auction. All Rights Reserved</p>
+        </div>
+
+        <div class="text-center">
+          <a href="#" class="text-light me-3"><i class="fa-brands fa-linkedin Social-icons"></i></a>
+          <a href="#" class="text-light me-3"><i class="fa-brands fa-instagram Social-icons"></i></a>
+          <a href="#" class="text-light me-3"><i class="fa-solid fa-x Social-icons"></i></a>
+          <a href="#" class="text-light  me-3"><i class="fa-brands fa-youtube Social-icons"></i></a>
+          <a href="mailto:info@4wheelsauction.com" class="text-light"><i
+              class="fa-solid fa-envelope Social-icons"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <script type="text/javaScript" src="script.js"></script>
+
+</body>
+
+</html>
