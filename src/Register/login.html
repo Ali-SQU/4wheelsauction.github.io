@@ -33,7 +33,7 @@
           </div>
           <h1 class="login-header text-center mb-4">Log In</h1>
           <p class="text-center text-muted mb-4">Welcome back! Please log in to your account.</p>
-          <form action="/submit-login" method="POST">
+          <form action="login.php" method="POST" id="login-form">
             <!-- Email Field -->
             <div class="form-group mb-3">
               <label for="email">Email Address</label>
@@ -57,7 +57,44 @@
             <p class="text-center mt-4">Don't have an account? <a href="sign_up.html" class="signup-link">Sign Up</a>
             </p>
           </form>
-          <div><a href="../index.html"><button class="btn btn-success btn-sm" style="font-size: 1em;">Back to home page</button></a></div>
+
+          <!-- Alert Box (For success or failure message) -->
+          <div id="alert-box" class="alert d-none mt-3"></div>
+
+          <!-- JavaScript to handle the form submission and show alerts -->
+          <script>
+            document.getElementById("login-form").addEventListener("submit", function (event) {
+              event.preventDefault(); // Prevent the form from submitting normally
+
+              const formData = new FormData(this);
+              fetch("login.php", {
+                method: "POST",
+                body: formData,
+              })
+                .then(response => response.json())
+                .then(data => {
+                  const alertBox = document.getElementById('alert-box');
+                  if (data.success) {
+                    alertBox.classList.remove('d-none');
+                    alertBox.classList.add('alert-success');
+                    alertBox.innerHTML = "Login successful! Welcome back.";
+                  } else {
+                    alertBox.classList.remove('d-none');
+                    alertBox.classList.add('alert-danger');
+                    alertBox.innerHTML = "Invalid email or password. Please try again.";
+                  }
+                })
+                .catch(error => {
+                  const alertBox = document.getElementById('alert-box');
+                  alertBox.classList.remove('d-none');
+                  alertBox.classList.add('alert-danger');
+                  alertBox.innerHTML = "Error occurred. Please try again.";
+                });
+            });
+          </script>
+
+          <div><a href="../index.html"><button class="btn btn-success btn-sm" style="font-size: 1em;">Back to home
+                page</button></a></div>
         </div>
       </div>
     </div>
