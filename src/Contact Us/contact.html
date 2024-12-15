@@ -59,7 +59,7 @@
             <p class="text-center">For any inquiries, please reach out to us using the form below, and our team will get
                 back to you as soon as possible.</p>
 
-            <form action="https://formspree.io/f/mrbgpyzv" method="POST" class="contact-form">
+            <form action="" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name" class="form-control" required>
@@ -87,11 +87,40 @@
 
                 <button type="submit" class="btn btn-primary btn-block">Send Message</button>
             </form>
+
+            <!-- JavaScript to handle the form submission and show alerts -->
+            <script>
+                document.querySelector(".contact-form").addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent the form from submitting normally
+
+                    const formData = new FormData(this);
+                    fetch("contact.php", {
+                        method: "POST",
+                        body: formData,
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                // Success: Display an alert and clear the form
+                                alert("Thank you! Your inquiry has been received and we will contact you soon.");
+                                this.reset(); // Clear the form
+                            } else {
+                                // Failure: Display an alert with the error message
+                                alert("Something went wrong. Please try again.");
+                            }
+                        })
+                        .catch(error => {
+                            // In case of an error in the fetch process
+                            alert("Error occurred. Please try again.");
+                        });
+                });
+            </script>
+
         </div>
 
         <div class="contact-sidebar card p-4">
             <h2>Contact Information</h2>
-            <div><strong>Phone: </strong><a href="tel:+96895323494">+968 95323494</a></div>
+            <div><strong>Phone: </strong><a href="tel:+96890090044">+968 90090044</a></div>
             <p><strong>Email:</strong> <a href="mailto:info@4wheelsauction.com">info@4wheelsauction.com</a></p>
             <p><strong>Office Hours:</strong><br>
                 8:00 am-5:00 pm, Monday – Thursday<br>
@@ -104,10 +133,10 @@
         </div>
     </main>
 
-  <!-- Up Arrow Button -->
-  <button id="scrollUpBtn" style="display: none;">
-    <i class="fa-solid fa-circle-up"></i>
-  </button>
+    <!-- Up Arrow Button -->
+    <button id="scrollUpBtn" style="display: none;">
+        <i class="fa-solid fa-circle-up"></i>
+    </button>
 
 
     <!-- Footer Start -->
