@@ -64,9 +64,9 @@
 
     <!-- Search Form that will be used to search for specific keyword using bootstrap -->
     <div class="container my-3"> 
-      <form id="search_form">
+      <form id="search_form" method="post" action="auction.php">
         <div class="input-group">
-          <input type="text" class="form-control" id="search_input" placeholder="Search by Keyword">
+          <input type="text" name="search_text" class="form-control" id="search_input" placeholder="Search by Keyword">
           <button class="btn btn-primary" type="submit" id="search_button">Search</button>
         </div>
       </form>
@@ -149,13 +149,23 @@
       die("Connection failed: " . mysqli_connect_error());
     }
 
+    // SQL commands
     $sql = "SELECT * FROM auction_cars";
     $result = mysqli_query($conn, $sql);
+
+    //!testing form processing
+    $search_text = "";
+    // Debugging - Check if POST data is being received
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      echo '<pre>';
+      print_r($_POST); // This will print all the data sent via the form
+      echo '</pre>';
+    }
 
     // Creating an array for the row data
     $auction_cars = [];
     
-    //Display each row in <tr><td></td>….</tr>
+    // Fetch and create object.
     while($row = mysqli_fetch_assoc($result)){ 
       $car = new Car_Auction(
         $row['sale_info'],
