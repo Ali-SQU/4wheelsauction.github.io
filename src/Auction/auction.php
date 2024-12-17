@@ -87,6 +87,54 @@
 
   <!-- PHP source code -->
   <?php
+
+    class Car_Auction{
+      public $sale_info;
+      public $image_src;
+      public $lot_info;
+      public $vehicle_info;
+      public $car_condition;
+      public $current_bid;
+
+      function __construct($sale_info, $image_src, $lot_info, $vehicle_info, $car_condition, $current_bid){
+        $this->sale_info = $sale_info;
+        $this->image_src = $image_src;
+        $this->lot_info = $lot_info;
+        $this->vehicle_info = $vehicle_info;
+        $this->car_condition = $car_condition;
+        $this->current_bid = $current_bid;
+      }
+
+      /*
+      * Method to display all the fetched data from the database.
+      * @return: html code for single row in string format.
+      */
+      function get_table_row(){
+        return "<tr>".
+              "<th scope='row' style='width:200px'>".
+              "<img src='{$this->image_src}' width='160' height='120' alt='car image' />".
+              "</th>".
+              "<td>{$this->lot_info}</td>".
+              "<td>{$this->vehicle_info}</td>".
+              "<td>{$this->sale_info}<span id='auction-date-text' class='text-danger'><br/>Auction Ends at <br/>2hr and 40min</span></td>".
+              "<td>{$this->car_condition}</td>".
+              "<td>".
+              "Current Bid:<br/>".
+              "{$this->current_bid} OMR<br/>".
+              "<div style='margin-top: 1em'>".
+              "<input type='number' name='bid_value' style='width: 105px'  value='{$this->current_bid}' min='{$this->current_bid}' /><label style='text-indent: 4px'> OMR</label><br/>".
+              "<span id='bidding-hint'>Bid according to increment rule</span><br />".
+              "<button type='button' class='btn btn-primary' style='margin-top: 0.45em; width: 88px'>Bid</button>".
+              "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-warning' style='margin-top: 0.45em; width: 120px'>More Detail</button></a>".
+              "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-success btn-sm' style='margin-top: 0.45em; width: 140px'>Add to watchlist</button></a>".
+              "</div>".
+              "</td>".
+              "</tr>";
+      }
+
+    }
+
+    // server information 
     $server_name = "localhost";
     $username = "root";
     $password = "";
@@ -103,36 +151,26 @@
 
     $sql = "SELECT * FROM auction_cars";
     $result = mysqli_query($conn, $sql);
+
+    // Creating an array for the row data
+    $auction_cars = [];
     
     //Display each row in <tr><td></td>….</tr>
     while($row = mysqli_fetch_assoc($result)){ 
-      $sale_info_db =  $row["sale_info"];
-      $image_db =  $row["img_src"];
-      $lot_info_db = $row["lot_info"];
-      $vehicle_info_db = $row["vehicle_info"];
-      $condition_db = $row["car_condition"];
-      $bid_db = 525;//$row["Bid"];
-      
-      echo "<tr>".
-      "<th scope='row' style=width='200px'>".
-      "<img src= $image_db width='160' height='120' alt='car image' />".
-      "</th>".
-      "<td> $lot_info_db</td>".
-      "<td>$vehicle_info_db</td>".
-      "<td>$sale_info_db<span id='auction-date-text' class='text-danger'><br/>Auction Ends at <br/>2hr and 40min</span></td>".
-      "<td>$condition_db</td>".
-      "<td>".
-      "Current Bid:<br/>".
-      $bid_db." OMR<br/>".
-      "<div style= 'marginTop: 1em'>".
-      "<input type='number' name='bid_value' style='width: 105px'  value= $bid_db min=$bid_db /><label style='textIndent: 4px'> OMR</label><br/>".
-      "<span id='bidding-hint'>Bid according to increment rule</span><br />".
-      "<button type='button' class='btn btn-primary' style=' marginTop: '0.45em', width: '88px'>Bid</button>".
-      "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-warning' style=' marginTop: '0.45em', width: '120px'>More Detail</button></a>".
-      "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-success btn-sm' style=' marginTop: '0.45em', width: '140px'>Add to watchlist</button></a>".
-      "</div>".
-      "</td>".
-      "</tr>";
+      $car = new Car_Auction(
+        $row['sale_info'],
+        $row['img_src'],
+        $row['lot_info'],
+        $row['vehicle_info'],
+        $row['car_condition'],
+        525 // ! Static bid value for now 
+      );
+      $auction_cars[] = $car; // append created object into the array
+    }
+
+    // Display all the rows
+    foreach ($auction_cars as $car){
+      echo $car->get_table_row();
     }
 
   ?>
