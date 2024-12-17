@@ -84,25 +84,13 @@
             <th id="header-style-table"  scope="col">Bid</th>
           </tr>
         </thead>
-        <!-- Initial display 10 first rows  -->
-         <!-- This may change depending on the page. -->
-        <!-- <tbody id="dynamic_auction_row_1"></tbody>
-        <tbody id="dynamic_auction_row_2"></tbody>
-        <tbody id="dynamic_auction_row_3"></tbody>
-        <tbody id="dynamic_auction_row_4"></tbody>
-        <tbody id="dynamic_auction_row_5"></tbody>
-        <tbody id="dynamic_auction_row_6"></tbody>
-        <tbody id="dynamic_auction_row_7"></tbody>
-        <tbody id="dynamic_auction_row_8"></tbody>
-        <tbody id="dynamic_auction_row_9"></tbody>
-        <tbody id="dynamic_auction_row_10"></tbody> -->
 
-              <!-- PHP source code -->
+  <!-- PHP source code -->
   <?php
     $server_name = "localhost";
     $username = "root";
     $password = "";
-    $db_name = "dummy_auction_data";
+    $db_name = "4wheelsauction";
     $conn = "";
 
     // connecting to mysql server
@@ -113,96 +101,42 @@
       die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT * FROM auction_table";
+    $sql = "SELECT * FROM auction_cars";
     $result = mysqli_query($conn, $sql);
-
-    // if (mysqli_num_rows($result) > 0) {
-    //   // output data of each row
-    //   while($row = mysqli_fetch_assoc($result)) {
-    //   echo "id: " . $row["sid"].
-    //   " - Name: " . $row["name"].
-    //   " - College:" . $row["col"]. "<br>";
-    //   }
-    // } else {
-    //     echo "No students were found";
-    //   }
-
-    $row = mysqli_fetch_assoc($result);
-    $row_db = array($row["image_path"], 
-                    $row["Lot Info"], 
-                    $row["Sale Info"], 
-                    $row["Vehicle Info"], 
-                    $row["Sale Info"], 
-                    $row["Car_condition"], 
-                    $row["Car_condition"]);
     
-    $sale_info_db =  $row["Sale Info"];
-    $image_db =  $row["image_path"];
-    $lot_info_db = $row["Lot Info"];
-    $vehicle_info_db = $row["Vehicle Info"];
-    $sale_info_db =  $row["Sale Info"];
-    $condition_db = $row["Car_condition"];
-    $bid_db = $row["Bid"];
-    
-
-    for ($i = 0; $i < 10; $i++){
-    echo "<tr>".
-         "<th scope='row' style=width='200px'>".
-         "<img src= $image_db width='160' height='120' alt='car image' />".
-         "</th>".
-         "<td> $lot_info_db</td>".
-         "<td>$vehicle_info_db</td>".
-         "<td>$sale_info_db<span id='auction-date-text' class='text-danger'><br/>Auction Ends at <br/>2hr and 40min</span></td>".
-         "<td>$condition_db</td>".
-         "<td>".
-         "Current Bid:<br/>".
-         $bid_db." OMR<br/>".
-         "<div style= 'marginTop: 1em'>".
-         "<input type='number' name='bid_value' style='width: 105px'  value= $bid_db min=$bid_db /><label style='textIndent: 4px'> OMR</label><br/>".
-         "<span id='bidding-hint'>Bid according to increment rule</span><br />".
-         "<button type='button' class='btn btn-primary' style=' marginTop: '0.45em', width: '88px'>Bid</button>".
-         "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-warning' style=' marginTop: '0.45em', width: '120px'>More Detail</button></a>".
-         "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-success btn-sm' style=' marginTop: '0.45em', width: '140px'>Add to watchlist</button></a>".
-         "</div>".
-         "</td>".
-         "</tr>";
+    //Display each row in <tr><td></td>….</tr>
+    while($row = mysqli_fetch_assoc($result)){ 
+      $sale_info_db =  $row["sale_info"];
+      $image_db =  $row["img_src"];
+      $lot_info_db = $row["lot_info"];
+      $vehicle_info_db = $row["vehicle_info"];
+      $condition_db = $row["car_condition"];
+      $bid_db = 525;//$row["Bid"];
+      
+      echo "<tr>".
+      "<th scope='row' style=width='200px'>".
+      "<img src= $image_db width='160' height='120' alt='car image' />".
+      "</th>".
+      "<td> $lot_info_db</td>".
+      "<td>$vehicle_info_db</td>".
+      "<td>$sale_info_db<span id='auction-date-text' class='text-danger'><br/>Auction Ends at <br/>2hr and 40min</span></td>".
+      "<td>$condition_db</td>".
+      "<td>".
+      "Current Bid:<br/>".
+      $bid_db." OMR<br/>".
+      "<div style= 'marginTop: 1em'>".
+      "<input type='number' name='bid_value' style='width: 105px'  value= $bid_db min=$bid_db /><label style='textIndent: 4px'> OMR</label><br/>".
+      "<span id='bidding-hint'>Bid according to increment rule</span><br />".
+      "<button type='button' class='btn btn-primary' style=' marginTop: '0.45em', width: '88px'>Bid</button>".
+      "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-warning' style=' marginTop: '0.45em', width: '120px'>More Detail</button></a>".
+      "<a href='..\Car Details\car_details.html'><button type='button' class='btn btn-success btn-sm' style=' marginTop: '0.45em', width: '140px'>Add to watchlist</button></a>".
+      "</div>".
+      "</td>".
+      "</tr>";
     }
+
   ?>
   
-        <script type="text/babel">
-          // Reactjs componenet.
-          /* Dynamical updates the site using React */
-          function Row_table({ item1, item2 }) {
-            return (
-              <tr>
-                <th scope="row" style={{ width: '200px' }}>
-                  <img src={item1.img_src} width="160" height="120" alt="car image" />
-                </th>
-                <td>{item1.lot_info}</td>
-                <td>{item1.vehicle_info}</td>
-                <td>{item1.sale_info}<span id="auction-date-text" className="text-danger"><br/>Auction Ends at {item2.time_left}</span></td>
-                <td>{item1.condition}</td>
-                <td>
-                  Current Bid:<br />
-                  {item2.bid} OMR<br />
-                  <div style={{ marginTop: '1em' }}>
-                    <input type="number" name="bid_value" style={{ width: '105px' }} value={item2.bid} min="200" /><label style={{ textIndent: '4px' }}>OMR</label><br />
-                    <span id="bidding-hint">Bid according to increment rule</span><br />
-                    <button type="button" class="btn btn-primary" style={{ marginTop: '0.45em', width: '88px' }}>Bid</button>
-                    <a href="..\Car Details\car_details.html"><button type="button" className="btn btn-warning" style={{ marginTop: '0.45em', width: '120px' }}>More Detail</button></a>
-                    <a href="..\Car Details\car_details.html"><button type="button" className="btn btn-success btn-sm" style={{ marginTop: '0.45em', width: '140px' }}>Add to watchlist</button></a>
-                  </div>
-                </td>
-              </tr>
-            );
-          };
-          // auction_array and bid_array are defined in main.js relative to this folder
-          // Renders all element from array
-          for (let i = 1; i <= 10; i++){
-            ReactDOM.createRoot(document.getElementById('dynamic_auction_row_'+i)).render(<Row_table item1={auction_array[i-1]} item2={bid_array[i - 1]}/>);
-          }
-
-        </script>
       </table>
     </div>
   </main>
