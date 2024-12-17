@@ -131,7 +131,6 @@
               "</td>".
               "</tr>";
       }
-
     }
 
     // server information 
@@ -153,13 +152,14 @@
     $sql = "SELECT * FROM auction_cars";
     $result = mysqli_query($conn, $sql);
 
-    //!testing form processing
-    $search_text = "";
-    // Debugging - Check if POST data is being received
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      echo '<pre>';
-      print_r($_POST); // This will print all the data sent via the form
-      echo '</pre>';
+    // Will search the database for all the keyword and return an array of car id which will be used later 
+    // to display only the searched results/filtered
+    $search_bar = $_POST["search_text"];
+    $sql_search = "SELECT car_id FROM auction_cars WHERE lot_info LIKE '%$search_bar%' OR vehicle_info LIKE '%$search_bar%' OR sale_info LIKE '%$search_bar%' OR car_condition LIKE '%$search_bar%'";
+    $search_result = mysqli_query($conn, $sql_search);
+    $car_id = [];
+    while($row = mysqli_fetch_assoc($search_result)){
+      $car_id[] = $row["car_id"];
     }
 
     // Creating an array for the row data
@@ -167,15 +167,17 @@
     
     // Fetch and create object.
     while($row = mysqli_fetch_assoc($result)){ 
-      $car = new Car_Auction(
-        $row['sale_info'],
-        $row['img_src'],
-        $row['lot_info'],
-        $row['vehicle_info'],
-        $row['car_condition'],
-        525 // ! Static bid value for now 
-      );
-      $auction_cars[] = $car; // append created object into the array
+      if (in_array($row['car_id'], $car_id)){ // only displays the search result
+        $car = new Car_Auction(
+          $row['sale_info'],
+          $row['img_src'],
+          $row['lot_info'],
+          $row['vehicle_info'],
+          $row['car_condition'],
+          525 // ! Static bid value for now 
+        );
+        $auction_cars[] = $car; // append created object into the array
+      }
     }
 
     // Display all the rows

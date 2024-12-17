@@ -13,6 +13,4 @@ scrollUpBtn.onclick = function () {
     window.scrollTo(0, 0);
 };
 
-// Prevent user from redirecting to new page
-const process_form = document.getElementById("search_form");
-process_form.addEventListener("submit", (event) =>{event.preventDefault();})
+
