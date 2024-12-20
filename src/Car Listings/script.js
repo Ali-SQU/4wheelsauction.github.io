@@ -114,8 +114,6 @@ p6 = new Car_price_mileage(
     "7000",
     "45000"
 );
-<<<<<<< HEAD
-
 p7 = new Car_price_mileage(
     "20000",
     "2300"
@@ -124,11 +122,6 @@ p7 = new Car_price_mileage(
 let detail_array = [d1, d2, d3, d4, d5, d6, d7];
 let price_mileage_array = [p1, p2, p3, p4, p5, p6, p7];
 
-=======
-// saving object into array
-let detail_array = [d1, d2, d3, d4, d5, d1, d2, d3, d4, d5];
-let price_mileage_array = [p1, p2, p3, p4, p5, p1, p2, p3, p4, p5];
->>>>>>> 3be7c19f3ddc1d8d3578d094879bedd725bb71de
 // process user input in this case search box form
 const form2 = document.getElementById("search_form");
 const search_input2 = document.getElementById("search_input");
@@ -159,7 +152,6 @@ form2.addEventListener("submit", (event) =>{ // handle submit button
     }
   }
 });
-<<<<<<< HEAD
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("filterForm");
@@ -213,5 +205,3 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((error) => console.error("Error:", error));
     });
 });
-=======
->>>>>>> 3be7c19f3ddc1d8d3578d094879bedd725bb71de
