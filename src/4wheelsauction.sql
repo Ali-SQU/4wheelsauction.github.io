@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2024 at 11:41 PM
+-- Generation Time: Dec 20, 2024 at 07:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,21 +33,22 @@ CREATE TABLE `auction_cars` (
   `lot_info` varchar(255) NOT NULL,
   `vehicle_info` varchar(255) NOT NULL,
   `sale_info` varchar(255) NOT NULL,
-  `car_condition` varchar(255) NOT NULL
+  `car_condition` varchar(255) NOT NULL,
+  `Bid_amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `auction_cars`
 --
 
-INSERT INTO `auction_cars` (`car_id`, `img_src`, `lot_info`, `vehicle_info`, `sale_info`, `car_condition`) VALUES
-(1, 'img/car_auct_demo1.jpg', '2012 Mercidies C1500 LS', 'Odometer 4434 (ACTUAL)', 'Dubai, AE', 'Crushed'),
-(2, 'img/Chevrolet_car_demo.jpeg', '2020 CHEVROLET TAHOE C1500 LS', 'Odometer 123593 (ACTUAL)', 'Halban, OM', 'Normal wear Damage Key Available'),
-(3, 'img/BMW_car_demo.jpeg', '2015 BMW S4', 'Odometer 442 (Depricated)', 'Muscat, OM', 'Medicore Broken seats'),
-(4, 'img/Audi_car_demo.jpg', '2020 Audi A7', 'Odometer 6521 (ACTUAL)', 'Barka, OM', 'Clean and good shape!'),
-(5, 'img/car_toyota_demo.jpg', '2018 Toyota Corolla', 'Odometer 24500 (ACTUAL)', 'Sohar, OM', 'Minor scratches'),
-(6, 'img/car_honda_demo.jpg', '2019 Honda Accord', 'Odometer 31500 (ACTUAL)', 'Muscat, OM', 'Like new'),
-(7, 'img/car_ford_demo.jpg', '2021 Ford Mustang', 'Odometer 8900 (ACTUAL)', 'Dubai, AE', 'Perfect condition');
+INSERT INTO `auction_cars` (`car_id`, `img_src`, `lot_info`, `vehicle_info`, `sale_info`, `car_condition`, `Bid_amount`) VALUES
+(1, 'img/car_auct_demo1.jpg', '2012 Mercidies C1500 LS', 'Odometer 4434 (ACTUAL)', 'Dubai, AE', 'Crushed', 1024),
+(2, 'img/Chevrolet_car_demo.jpeg', '2020 CHEVROLET TAHOE C1500 LS', 'Odometer 123593 (ACTUAL)', 'Halban, OM', 'Normal wear Damage Key Available', 3044),
+(3, 'img/BMW_car_demo.jpeg', '2015 BMW S4', 'Odometer 442 (Depricated)', 'Muscat, OM', 'Medicore Broken seats', 525),
+(4, 'img/Audi_car_demo.jpg', '2020 Audi A7', 'Odometer 6521 (ACTUAL)', 'Barka, OM', 'Clean and good shape!', 890),
+(5, 'img/car_toyota_demo.jpg', '2018 Toyota Corolla', 'Odometer 24500 (ACTUAL)', 'Sohar, OM', 'Minor scratches', 10500),
+(6, 'img/car_honda_demo.jpg', '2019 Honda Accord', 'Odometer 31500 (ACTUAL)', 'Muscat, OM', 'Like new', 1000),
+(7, 'img/car_ford_demo.jpg', '2021 Ford Mustang', 'Odometer 8900 (ACTUAL)', 'Dubai, AE', 'Perfect condition', 589);
 
 -- --------------------------------------------------------
 
