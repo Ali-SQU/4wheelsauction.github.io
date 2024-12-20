@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2024 at 10:03 PM
+-- Generation Time: Dec 20, 2024 at 10:10 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -132,6 +132,13 @@ CREATE TABLE `contact_us` (
   `message` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `name`, `email`, `phone`, `subject`, `message`) VALUES
+(1, 'ahmed', 'ahmed@gamil.com', '12345424', 'Hello', 'Hi there!');
+
 -- --------------------------------------------------------
 
 --
@@ -139,8 +146,18 @@ CREATE TABLE `contact_us` (
 --
 
 CREATE TABLE `subscriptions` (
-  `email` varchar(255) NOT NULL
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subscriptions`
+--
+
+INSERT INTO `subscriptions` (`id`, `email`, `created_at`) VALUES
+(1, 'test1@testing.com', '2024-12-20 20:58:49'),
+(2, 'test2@testing.com', '2024-12-20 20:59:07');
 
 -- --------------------------------------------------------
 
@@ -161,6 +178,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `phone`, `company`, `country`, `membership`) VALUES
+(1, 'Ahmed', 'Ahmed123', 'Ahhmed@gmail.com', '$2y$10$z14qzqgAqm.IAO.voNMxcu04fHcwein7SAU6ymuo0fDp9JVt9wxVu', '12242432', 'SQU', 'Om', 'basic'),
+(2, 'Ali', 'Ali123', 'Ali@gmail.com', '$2y$10$GlEMEAYDymSm0Cyy9oVk6uKo8V4Yt8REyJIxNZ.9XcA3ZVK6p8ZmC', '1123234234', 'Dell', 'Om', 'basic');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -177,12 +202,6 @@ ALTER TABLE `cardetails`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `carlisting`
---
-ALTER TABLE `carlisting`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `contact_us`
 --
 ALTER TABLE `contact_us`
@@ -192,7 +211,8 @@ ALTER TABLE `contact_us`
 -- Indexes for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  ADD PRIMARY KEY (`email`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `users`
@@ -219,22 +239,22 @@ ALTER TABLE `cardetails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `carlisting`
---
-ALTER TABLE `carlisting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
