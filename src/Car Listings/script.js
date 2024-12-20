@@ -47,71 +47,93 @@ function Car_price_mileage(price, mileage){
 
 // Initilize car object
 d1 = new Car_detail(
-    "./Images/car.jpg",
-    "Car Model 1",
-    "Pickups",
-    "Detail 1",
-    "Additional comment 1"
+    "./Images/car1.jpeg",
+    "2012 Mercedes C1500 LS",
+    "Truck",
+    "Crushed",
+    "Clean and in Good Shape"
 );
 d2 = new Car_detail(
-    "./Images/BMW_car_demo.jpeg",
-    "BMW",
-    "ATVs",
-    "Fast car",
-    "Cleaned and polished!"
+    "./Images/OIP.jpeg",
+    "2020 Chevrolet Tahoe C1500 LS",
+    "SUV",
+    "Normal wear; Damage Key Available",
+    ""
 );
 d3 = new Car_detail(
-    "./Images/Audi_car_demo.jpg",
-    "Audi",
-    "Automobiles",
-    "100 s12",
-    "Luxary car"
+    "./Images/car3.jpeg",
+    "2015 BMW S4",
+    "Coupe",
+    "Mediocre Broken Seats",
+    " Old Luxary car"
 );
 
 d4 = new Car_detail(
-    "./Images/Chevrolet_car_demo.jpeg",
-    "Car Model 4",
-    "Mini cooper",
-    "Small",
-    "old school car"
+    "./Images/Audi_car_demo.jpg",
+    "2020 Audi A7",
+    "Sedan",
+    "Clean and in Good Shape",
+    ""
 );
 
 d5 = new Car_detail(
-    "./Images/car_auct_demo1.jpg",
-    "Car Model 5",
-    "Trucks",
-    "Detail 1",
-    "Old is gold"
+    "./Images/cor.jpeg",
+    "2018 Toyota Corolla",
+    "Compact",
+    "Minor Scratches",
+    ""
+);
+d6 = new Car_detail(
+    "./Images/honda.jpeg",
+    "2019 Honda Accord",
+    "Sedan",
+    "Like New",
+    ""
+);
+d7 = new Car_detail(
+    "./Images/moss.jpeg",
+    "2021 Ford Mustang GT",
+    "Sports",
+    "Pristine Condition; Recently Serviced",
+    ""
 );
 
 p1 = new Car_price_mileage(
-    "100",
-    "12040141414"
+    "6400",
+    "120000"
 );
 
 p2 = new Car_price_mileage(
-    "200",
-    "1013414"
+    "14000",
+    "44000"
 );
 
 p3 = new Car_price_mileage(
-    "10050",
-    "12024"
+    "7000",
+    "155000"
 );
 
 p4 = new Car_price_mileage(
-    "4400",
-    "10000"
+    "18000",
+    "32000"
 );
 
 p5 = new Car_price_mileage(
-    "50000",
-    "200001"
+    "5400",
+    "80000"
+);
+p6 = new Car_price_mileage(
+    "7000",
+    "45000"
 );
 
+p7 = new Car_price_mileage(
+    "20000",
+    "2300"
+);
 // saving object into array
-let detail_array = [d1, d2, d3, d4, d5, d1, d2, d3, d4, d5];
-let price_mileage_array = [p1, p2, p3, p4, p5, p1, p2, p3, p4, p5];
+let detail_array = [d1, d2, d3, d4, d5, d6, d7];
+let price_mileage_array = [p1, p2, p3, p4, p5, p6, p7];
 
 // process user input in this case search box form
 const form2 = document.getElementById("search_form");
@@ -143,4 +165,57 @@ form2.addEventListener("submit", (event) =>{ // handle submit button
       row_element.style.display = "none";
     }
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("filterForm");
+    const tableBody = document.getElementById("carTableBody");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // FormData to send the selected filters
+        const formData = new FormData(form);
+        fetch("carlist.php", {
+            method: "POST",
+            body: formData,
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            tableBody.innerHTML = "";
+            // Add a header row
+            const headerRow = `
+                <tr>
+                    <th colspan="2" class="text-center bg-primary">Car Details</th>
+                    <th colspan="2" class="text-center bg-info">Price and Mileage</th>
+                    <th rowspan="2" class="text-center">Type</th>
+                    <th rowspan="2" class="text-center">Details</th>
+                </tr>
+                <tr>
+                    <th>Images</th>
+                    <th>Car Model</th>
+                    <th>Price (OMR)</th>
+                    <th>Mileage (km)</th>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML("beforeend", headerRow);
+
+            if (data.length === 0) {
+                tableBody.innerHTML = "<tr><td colspan='5'>No cars match the filters.</td></tr>";
+                return;
+            }
+            data.forEach((car) => {
+                const row = `
+                    <tr>
+                        <td><img src="${car.img}" alt="${car.model}" width="100"></td>
+                        <td>${car.model}</td>
+                        <td>${car.price} OMR</td>
+                        <td>${car.mileage} km</td>
+                        <td>${car.type}</td>
+                        <td>${car.comment}</td>
+                    </tr>
+                `;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+        })
+        .catch((error) => console.error("Error:", error));
+    });
 });

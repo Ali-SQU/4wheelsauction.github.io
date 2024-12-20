@@ -2,16 +2,13 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "car_sales";
-
+$dbname = "4wheelsauction";
 // Connect to the database
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the email from the form
@@ -28,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Redirect back to index.html with an error parameter
         header("Location: index.html?success=false");
     }
-
     // Close the connection
     mysqli_close($conn);
     exit();

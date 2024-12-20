@@ -61,10 +61,26 @@ main {
   color: #700639;
 }
 
+
 .btn-outline-primary:hover,
 .btn-primary:hover {
   background-color: #700639;
   color: white;
+}
+.button {
+  font-size: 1rem;
+  color: white; /* Text color */
+  background-color: red; 
+  border: none; /* Removes default border */
+  padding: 10px 20px; 
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+/* Hover effect */
+.button:hover {
+  background-color: darkred; 
 }
 
 #Explore_all:hover {

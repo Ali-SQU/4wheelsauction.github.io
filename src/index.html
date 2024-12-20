@@ -245,16 +245,27 @@
               </div>
               <small style="color: rgb(0, 0, 0);">We respect your privacy. Unsubscribe anytime.</small>
             </form>
+            <form method="POST" action="cancelSub.php">
+              <div class="input-group mb-3">
+                  <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                  <button class="btn btn-danger" type="submit" style="font-size: 1rem;">Cancel Your Subscribe</button>
+              </div>
+          </form>
             <script>
-              // Check if the success or error message is present in the URL parameters
+              // Check URL parameters for success or error messages
               window.onload = function () {
                 const urlParams = new URLSearchParams(window.location.search);
+            
                 if (urlParams.has('success')) {
                   const success = urlParams.get('success');
                   if (success === 'true') {
-                    alert("You have successfully subscribed!");
+                    alert("Your subscription has been successfully canceled!");
                   } else {
-                    alert("There was an error with your subscription. Please try again.");
+                    if (urlParams.has('error') && urlParams.get('error') === 'email_not_found') {
+                      alert("The email is not found in our subscription list.");
+                    } else {
+                      alert("There was an error while processing your request. Please try again.");
+                    }
                   }
                 }
               };
