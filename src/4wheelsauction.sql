@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2024 at 07:50 PM
+-- Generation Time: Dec 20, 2024 at 10:10 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -100,21 +100,22 @@ CREATE TABLE `carlisting` (
   `car_model` varchar(255) NOT NULL,
   `type` varchar(100) NOT NULL,
   `detail` varchar(255) NOT NULL,
-  `addition_comment` text DEFAULT NULL
+  `addition_comment` text DEFAULT NULL,
+  `price` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `carlisting`
 --
 
-INSERT INTO `carlisting` (`id`, `img_src`, `car_model`, `type`, `detail`, `addition_comment`) VALUES
-(1, 'img/car_auct_demo1.jpg', '2012 Mercedes C1500 LS', 'Truck', 'Odometer: 4,434 mi (ACTUAL)', 'Crushed'),
-(2, 'img/Chevrolet_car_demo.jpeg', '2020 Chevrolet Tahoe C1500 LS', 'SUV', 'Odometer: 123,593 mi (ACTUAL)', 'Normal wear; Damage Key Available'),
-(3, 'img/BMW_car_demo.jpeg', '2015 BMW S4', 'Coupe', 'Odometer: 442 mi (Depricated)', 'Mediocre Broken Seats'),
-(4, 'img/Audi_car_demo.jpg', '2020 Audi A7', 'Sedan', 'Odometer: 6,521 mi (ACTUAL)', 'Clean and in Good Shape'),
-(5, 'img/car_toyota_demo.jpg', '2018 Toyota Corolla', 'Compact', 'Odometer: 24,500 mi (ACTUAL)', 'Minor Scratches'),
-(6, 'img/car_honda_demo.jpg', '2019 Honda Accord', 'Sedan', 'Odometer: 31,500 mi (ACTUAL)', 'Like New'),
-(7, 'img/car_ford_demo.jpg', '2021 Ford Mustang GT', 'Sports', 'Odometer: 8,900 mi (ACTUAL)', 'Pristine Condition; Recently Serviced');
+INSERT INTO `carlisting` (`id`, `img_src`, `car_model`, `type`, `detail`, `addition_comment`, `price`) VALUES
+(1, './Images/car1.jpeg', '2012 Mercedes C1500 LS', 'Truck', '120000', 'Crushed', '6400 OMR'),
+(2, './Images/OIP.jpeg', '2020 Chevrolet Tahoe C1500 LS', 'SUV', '44000', 'Normal wear; Damage Key Available', '14000 OMR'),
+(3, './Images/car3.jpeg', '2015 BMW S4', 'Coupe', '155000', 'Mediocre Broken Seats', '7000 OMR'),
+(4, './Images/Audi_car_demo.jpg', '2020 Audi A7', 'Sedan', '32000', 'Clean and in Good Shape', '18000 OMR'),
+(5, './Images/cor.jpeg', '2018 Toyota Corolla', 'Compact', '80000', 'Minor Scratches', '5400 OMR'),
+(6, './Images/honda.jpeg', '2019 Honda Accord', 'Sedan', '45000', 'Like New', '7000 OMR'),
+(7, './Images/moss.jpeg', '2021 Ford Mustang GT', 'Sports', '2300', 'Pristine Condition; Recently Serviced', '20000 OMR');
 
 -- --------------------------------------------------------
 
@@ -131,6 +132,13 @@ CREATE TABLE `contact_us` (
   `message` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `name`, `email`, `phone`, `subject`, `message`) VALUES
+(1, 'ahmed', 'ahmed@gamil.com', '12345424', 'Hello', 'Hi there!');
+
 -- --------------------------------------------------------
 
 --
@@ -138,8 +146,18 @@ CREATE TABLE `contact_us` (
 --
 
 CREATE TABLE `subscriptions` (
-  `email` varchar(255) NOT NULL
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subscriptions`
+--
+
+INSERT INTO `subscriptions` (`id`, `email`, `created_at`) VALUES
+(1, 'test1@testing.com', '2024-12-20 20:58:49'),
+(2, 'test2@testing.com', '2024-12-20 20:59:07');
 
 -- --------------------------------------------------------
 
@@ -160,6 +178,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `password`, `phone`, `company`, `country`, `membership`) VALUES
+(1, 'Ahmed', 'Ahmed123', 'Ahhmed@gmail.com', '$2y$10$z14qzqgAqm.IAO.voNMxcu04fHcwein7SAU6ymuo0fDp9JVt9wxVu', '12242432', 'SQU', 'Om', 'basic'),
+(2, 'Ali', 'Ali123', 'Ali@gmail.com', '$2y$10$GlEMEAYDymSm0Cyy9oVk6uKo8V4Yt8REyJIxNZ.9XcA3ZVK6p8ZmC', '1123234234', 'Dell', 'Om', 'basic');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -176,12 +202,6 @@ ALTER TABLE `cardetails`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `carlisting`
---
-ALTER TABLE `carlisting`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `contact_us`
 --
 ALTER TABLE `contact_us`
@@ -191,7 +211,8 @@ ALTER TABLE `contact_us`
 -- Indexes for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  ADD PRIMARY KEY (`email`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `users`
@@ -218,22 +239,22 @@ ALTER TABLE `cardetails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `carlisting`
---
-ALTER TABLE `carlisting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `subscriptions`
+--
+ALTER TABLE `subscriptions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
