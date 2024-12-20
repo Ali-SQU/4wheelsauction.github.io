@@ -13,14 +13,12 @@ scrollUpBtn.onclick = function () {
     window.scrollTo(0, 0);
 };
 
-/* Car object */
 function Car_detail(img_src, car_model, type, detail, addition_comment){
     this.img_src = img_src;
     this.car_model = car_model;
     this.type = type;
     this.detail = detail;
     this.addition_comment = addition_comment;
-
     // search method that will search for specific keyword within the object's property
     this.search_keyword = function(search_keyword){
         search_keyword = search_keyword.toLowerCase(); 
@@ -32,11 +30,9 @@ function Car_detail(img_src, car_model, type, detail, addition_comment){
         return false
     };
 }
-
 function Car_price_mileage(price, mileage){
     this.price = price;
     this.mileage = mileage;
-
     this.search_keyword = function(search_keyword){
         search_keyword = search_keyword.toLowerCase(); 
         if (this.price.toLowerCase().includes(search_keyword)) {return true;}
@@ -44,7 +40,6 @@ function Car_price_mileage(price, mileage){
         return false
     };
 }
-
 // Initilize car object
 d1 = new Car_detail(
     "./Images/car1.jpeg",
@@ -67,7 +62,6 @@ d3 = new Car_detail(
     "Mediocre Broken Seats",
     " Old Luxary car"
 );
-
 d4 = new Car_detail(
     "./Images/Audi_car_demo.jpg",
     "2020 Audi A7",
@@ -75,7 +69,6 @@ d4 = new Car_detail(
     "Clean and in Good Shape",
     ""
 );
-
 d5 = new Car_detail(
     "./Images/cor.jpeg",
     "2018 Toyota Corolla",
@@ -97,27 +90,22 @@ d7 = new Car_detail(
     "Pristine Condition; Recently Serviced",
     ""
 );
-
 p1 = new Car_price_mileage(
     "6400",
     "120000"
 );
-
 p2 = new Car_price_mileage(
     "14000",
     "44000"
 );
-
 p3 = new Car_price_mileage(
     "7000",
     "155000"
 );
-
 p4 = new Car_price_mileage(
     "18000",
     "32000"
 );
-
 p5 = new Car_price_mileage(
     "5400",
     "80000"
@@ -126,6 +114,7 @@ p6 = new Car_price_mileage(
     "7000",
     "45000"
 );
+<<<<<<< HEAD
 
 p7 = new Car_price_mileage(
     "20000",
@@ -135,10 +124,14 @@ p7 = new Car_price_mileage(
 let detail_array = [d1, d2, d3, d4, d5, d6, d7];
 let price_mileage_array = [p1, p2, p3, p4, p5, p6, p7];
 
+=======
+// saving object into array
+let detail_array = [d1, d2, d3, d4, d5, d1, d2, d3, d4, d5];
+let price_mileage_array = [p1, p2, p3, p4, p5, p1, p2, p3, p4, p5];
+>>>>>>> 3be7c19f3ddc1d8d3578d094879bedd725bb71de
 // process user input in this case search box form
 const form2 = document.getElementById("search_form");
 const search_input2 = document.getElementById("search_input");
-
 form2.addEventListener("submit", (event) =>{ // handle submit button
   event.preventDefault(); // This prevent the page from reloading whenever a form is submited
   const search_text = search_input2.value;
@@ -166,6 +159,7 @@ form2.addEventListener("submit", (event) =>{ // handle submit button
     }
   }
 });
+<<<<<<< HEAD
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("filterForm");
@@ -219,3 +213,5 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((error) => console.error("Error:", error));
     });
 });
+=======
+>>>>>>> 3be7c19f3ddc1d8d3578d094879bedd725bb71de
