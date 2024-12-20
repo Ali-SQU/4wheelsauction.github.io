@@ -174,7 +174,7 @@
           $row['lot_info'],
           $row['vehicle_info'],
           $row['car_condition'],
-          525 // ! Static bid value for now 
+          $row['Bid_amount']
         );
         $auction_cars[] = $car; // append created object into the array
       }
