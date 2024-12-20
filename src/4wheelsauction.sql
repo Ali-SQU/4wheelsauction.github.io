@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2024 at 07:50 PM
+-- Generation Time: Dec 20, 2024 at 10:03 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -100,21 +100,22 @@ CREATE TABLE `carlisting` (
   `car_model` varchar(255) NOT NULL,
   `type` varchar(100) NOT NULL,
   `detail` varchar(255) NOT NULL,
-  `addition_comment` text DEFAULT NULL
+  `addition_comment` text DEFAULT NULL,
+  `price` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `carlisting`
 --
 
-INSERT INTO `carlisting` (`id`, `img_src`, `car_model`, `type`, `detail`, `addition_comment`) VALUES
-(1, 'img/car_auct_demo1.jpg', '2012 Mercedes C1500 LS', 'Truck', 'Odometer: 4,434 mi (ACTUAL)', 'Crushed'),
-(2, 'img/Chevrolet_car_demo.jpeg', '2020 Chevrolet Tahoe C1500 LS', 'SUV', 'Odometer: 123,593 mi (ACTUAL)', 'Normal wear; Damage Key Available'),
-(3, 'img/BMW_car_demo.jpeg', '2015 BMW S4', 'Coupe', 'Odometer: 442 mi (Depricated)', 'Mediocre Broken Seats'),
-(4, 'img/Audi_car_demo.jpg', '2020 Audi A7', 'Sedan', 'Odometer: 6,521 mi (ACTUAL)', 'Clean and in Good Shape'),
-(5, 'img/car_toyota_demo.jpg', '2018 Toyota Corolla', 'Compact', 'Odometer: 24,500 mi (ACTUAL)', 'Minor Scratches'),
-(6, 'img/car_honda_demo.jpg', '2019 Honda Accord', 'Sedan', 'Odometer: 31,500 mi (ACTUAL)', 'Like New'),
-(7, 'img/car_ford_demo.jpg', '2021 Ford Mustang GT', 'Sports', 'Odometer: 8,900 mi (ACTUAL)', 'Pristine Condition; Recently Serviced');
+INSERT INTO `carlisting` (`id`, `img_src`, `car_model`, `type`, `detail`, `addition_comment`, `price`) VALUES
+(1, './Images/car1.jpeg', '2012 Mercedes C1500 LS', 'Truck', '120000', 'Crushed', '6400 OMR'),
+(2, './Images/OIP.jpeg', '2020 Chevrolet Tahoe C1500 LS', 'SUV', '44000', 'Normal wear; Damage Key Available', '14000 OMR'),
+(3, './Images/car3.jpeg', '2015 BMW S4', 'Coupe', '155000', 'Mediocre Broken Seats', '7000 OMR'),
+(4, './Images/Audi_car_demo.jpg', '2020 Audi A7', 'Sedan', '32000', 'Clean and in Good Shape', '18000 OMR'),
+(5, './Images/cor.jpeg', '2018 Toyota Corolla', 'Compact', '80000', 'Minor Scratches', '5400 OMR'),
+(6, './Images/honda.jpeg', '2019 Honda Accord', 'Sedan', '45000', 'Like New', '7000 OMR'),
+(7, './Images/moss.jpeg', '2021 Ford Mustang GT', 'Sports', '2300', 'Pristine Condition; Recently Serviced', '20000 OMR');
 
 -- --------------------------------------------------------
 
